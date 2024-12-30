@@ -1,3 +1,7 @@
+import { SalesChart } from "@/components/sales-chart";
+import { TraficsChart } from "@/components/tracfic-chart";
+import { TrendingUp } from "lucide-react";
+
 const metrics = [
   {
     id: 1,
@@ -55,7 +59,23 @@ export default function Dashboard() {
           </section>
         ))}
       </div>
-      <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+      <div className="flex gap-4  flex-1 rounded-xl">
+        <div className="flex w-1/2 lg:w-[55%] relative">
+          <SalesChart />
+
+          <div className="absolute inset-6 flex flex-col gap-2 w-max h-min">
+            <div className="flex items-center gap-2 font-medium leading-none">
+              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+            </div>
+            <div className="flex items-center gap-2 leading-none text-muted-foreground">
+              April - June 2025
+            </div>
+          </div>
+        </div>
+        <div className="flex w-1/2 lg:w-[45%] ">
+          <TraficsChart />
+        </div>
+      </div>
     </div>
   );
 }
