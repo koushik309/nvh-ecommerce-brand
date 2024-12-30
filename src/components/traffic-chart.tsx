@@ -32,16 +32,16 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function TraficsChart() {
+export function TrafficChart() {
   return (
-    <Card className="w-full pt-[40px] h-min  bg-muted/50">
+    <Card className="w-full pt-[75px] h-min  bg-muted/50">
       <CardContent>
         <ChartContainer config={chartConfig}>
           <BarChart
             accessibilityLayer
             data={chartData}
             margin={{
-              top: 10,
+              top: 20,
             }}
           >
             <CartesianGrid vertical={true} />
@@ -55,7 +55,7 @@ export function TraficsChart() {
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
             />
-            <Bar dataKey="visitors" fill="var(--color-visitors)" radius={8}>
+            <Bar dataKey="visitors" fill="var(--color-visitors)" radius={6}>
               <LabelList
                 position="top"
                 offset={8}
