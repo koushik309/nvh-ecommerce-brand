@@ -15,7 +15,7 @@ export default function Products() {
         </Button>
       </div>
 
-      <div className="flex gap-4 flex-wrap w-full h-full bg-muted/50 rounded-xl p-2">
+      <div className="flex gap-4 flex-wrap justify-start w-full h-full bg-muted/50 rounded-xl p-2">
         {Array.from({ length: 6 }).map((_, index) => (
           <ProductsCard key={index} />
         ))}
