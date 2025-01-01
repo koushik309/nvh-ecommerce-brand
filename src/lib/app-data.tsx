@@ -1,3 +1,9 @@
+import i1 from "../../public/1.jpg";
+import i2 from "../../public/2.jpg";
+import i3 from "../../public/3.jpg";
+import i4 from "../../public/4.jpg";
+import i5 from "../../public/5.jpg";
+import i6 from "../../public/6.jpg";
 export const products = [
   {
     id: 1,
@@ -5,9 +11,9 @@ export const products = [
     description:
       "A luxury serum enriched with vitamins C and E to restore your skin's natural glow.",
     category: "Serums",
-    price: 169.99,
+    price: 169,
     stock: 1120,
-    image: "radiance-revival-serum.jpg",
+    image: i1,
     rating: 4.8,
     tags: ["Glow", "Anti-Aging", "Hydrating"],
   },
@@ -17,9 +23,9 @@ export const products = [
     description:
       "A deeply hydrating moisturizer with hyaluronic acid and shea butter.",
     category: "Moisturizers",
-    price: 159.99,
+    price: 159,
     stock: 185,
-    image: "silken-touch-moisturizer.jpg",
+    image: i2,
     rating: 4.7,
     tags: ["Hydrating", "Nourishing"],
   },
@@ -29,9 +35,9 @@ export const products = [
     description:
       "A gentle cleansing balm that removes makeup and impurities while nourishing the skin.",
     category: "Cleansers",
-    price: 139.99,
+    price: 139,
     stock: 1150,
-    image: "pure-bliss-cleansing-balm.jpg",
+    image: i3,
     rating: 4.6,
     tags: ["Gentle", "Makeup Remover", "Hydrating"],
   },
@@ -41,9 +47,9 @@ export const products = [
     description:
       "A rejuvenating eye cream to reduce puffiness and diminish fine lines.",
     category: "Eye Care",
-    price: 249.99,
+    price: 249,
     stock: 1100,
-    image: "eternal-youth-eye-cream.jpg",
+    image: i4,
     rating: 4.9,
     tags: ["Anti-Aging", "Brightening", "Soothing"],
   },
@@ -53,9 +59,9 @@ export const products = [
     description:
       "A restorative night cream that works overnight to repair and hydrate your skin.",
     category: "Night Care",
-    price: 379.99,
+    price: 379,
     stock: 170,
-    image: "velvet-veil-night-cream.jpg",
+    image: i5,
     rating: 4.7,
     tags: ["Repairing", "Hydrating", "Anti-Aging"],
   },
@@ -65,9 +71,9 @@ export const products = [
     description:
       "A lightweight sunscreen offering broad-spectrum protection with a matte finish.",
     category: "Sunscreens",
-    price: 134.99,
+    price: 134,
     stock: 2100,
-    image: "glowshield-sunscreen-spf50.jpg",
+    image: i6,
     rating: 4.5,
     tags: ["Sun Protection", "Lightweight", "Non-Greasy"],
   },

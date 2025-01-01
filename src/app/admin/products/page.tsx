@@ -1,8 +1,8 @@
-import { DatePickerWithRange } from "@/components/date-range-picker";
 import OrdersTabs from "@/components/orders-tabs";
 import ProductsCard from "@/components/products-card";
 import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
+import { products } from "@/lib/app-data";
 
 export default function Products() {
   return (
@@ -16,8 +16,13 @@ export default function Products() {
       </div>
 
       <div className="flex gap-4 flex-wrap justify-start w-full h-full bg-muted/50 rounded-xl p-2">
-        {Array.from({ length: 6 }).map((_, index) => (
-          <ProductsCard key={index} />
+        {products.map((product) => (
+          <ProductsCard
+            key={product.id}
+            image={product.image}
+            price={product.price}
+            stock={product.stock}
+          />
         ))}
       </div>
     </main>

@@ -1,25 +1,25 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import Image from "next/image";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import Image, { StaticImageData } from "next/image";
 import p1 from "../../public/1.jpg";
-import { Progress } from "@/components/ui/progress";
-import { Package, Pencil, TrendingUp } from "lucide-react";
+import { Package, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
-export default function ProductsCard() {
+export default function ProductsCard({
+  price,
+  image,
+  stock,
+}: {
+  price: number;
+  image: StaticImageData;
+  stock: number;
+}) {
   return (
     <Card className="bg-muted max-w-60 cursor-pointer hover:bg-zinc-700 transition-colors">
       <CardHeader className="p-2 relative">
         <Image
           width={1070}
           height={1070}
-          src={p1}
+          src={image}
           alt="Product Image"
           className="rounded-lg"
         />
@@ -27,15 +27,14 @@ export default function ProductsCard() {
           variant="secondary"
           className="absolute inset-2 left-3 w-min h-min"
         >
-          128$
+          ${price}
         </Badge>
       </CardHeader>
       <CardContent className="flex flex-col items-start  p-2">
         <p className="flex items-center justify-between w-full">
-          <span>Orders: 1160</span>
+          <span>Orders: {stock}</span>
           <span className="flex items-center gap-1 text-xs opacity-60">
-            <TrendingUp className="size-4" />
-            +12 Today
+            <TrendingUp className="size-4" />+{Math.floor(stock * 0.01)} Today
           </span>
         </p>
 
@@ -43,7 +42,7 @@ export default function ProductsCard() {
           <span>Stock: 38%</span>
           <span className="flex items-center gap-1 text-xs opacity-60">
             <Package className="size-4" />
-            1160/3055
+            {stock}/{stock * 3}
           </span>
         </p>
       </CardContent>
