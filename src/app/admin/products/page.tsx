@@ -3,6 +3,7 @@ import ProductsCard from "@/components/products-card";
 import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
 import { products } from "@/lib/app-data";
+import { SheetDemo } from "@/components/product-sheet";
 
 export default function Products() {
   return (
@@ -17,11 +18,16 @@ export default function Products() {
 
       <div className="flex gap-4 flex-wrap justify-start w-full h-full bg-muted/50 rounded-xl p-2">
         {products.map((product) => (
-          <ProductsCard
+          <SheetDemo
             key={product.id}
-            image={product.image}
+            name={product.name}
+            description={product.description}
+            category={product.category}
             price={product.price}
             stock={product.stock}
+            image={product.image}
+            rating={product.rating}
+            tags={product.tags}
           />
         ))}
       </div>

@@ -67,7 +67,7 @@ export const products = [
   },
   {
     id: 6,
-    name: "GlowShield Sunscreen SPF 50",
+    name: "GlowShield Sunscreen SPF7",
     description:
       "A lightweight sunscreen offering broad-spectrum protection with a matte finish.",
     category: "Sunscreens",

@@ -8,10 +8,12 @@ export default function ProductsCard({
   price,
   image,
   stock,
+  name,
 }: {
   price: number;
   image: StaticImageData;
   stock: number;
+  name: string;
 }) {
   return (
     <Card className="bg-muted max-w-60 cursor-pointer hover:bg-zinc-700 transition-colors">
@@ -31,6 +33,8 @@ export default function ProductsCard({
         </Badge>
       </CardHeader>
       <CardContent className="flex flex-col items-start  p-2">
+        <p className="w-full">{name}</p>
+
         <p className="flex items-center justify-between w-full">
           <span>Orders: {stock}</span>
           <span className="flex items-center gap-1 text-xs opacity-60">
