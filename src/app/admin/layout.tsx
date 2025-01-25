@@ -4,7 +4,6 @@ import { AppSidebar } from "@/components/app-sidebar";
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
@@ -18,7 +17,7 @@ import {
 } from "@/components/ui/sidebar";
 
 export const metadata: Metadata = {
-  title: "Admin Dahboard",
+  title: "NVH® • Admin Dahboard",
   description: "Nzar",
 };
 
