@@ -13,7 +13,7 @@ export default function ProductsCard({
   name: string;
 }) {
   return (
-    <Card className="bg-[#F8F8F8] max-w-60 cursor-pointer text-black hover:opacity-80 transition-opacity">
+    <Card className="bg-[#F8F8F8] text-black max-w-60 cursor-pointer hover:opacity-80 transition-opacity">
       <CardHeader className="p-2">
         <Image
           width={1070}
@@ -23,7 +23,7 @@ export default function ProductsCard({
           className="rounded-lg"
         />
       </CardHeader>
-      <CardContent className="flex flex-col items-start  p-4 pt-2">
+      <CardContent className="flex flex-col items-start p-4 pt-2">
         <p className="w-full font-medium flex items-center justify-between">
           <span>{name}</span>
           <span>{price}$</span>
@@ -33,22 +33,4 @@ export default function ProductsCard({
       </CardContent>
     </Card>
   );
-}
-{
-  /* <Card className="bg-black cursor-pointer text-black hover:opacity-80 transition-opacity">
-<CardHeader className="p-2">
-  <Image
-    src={image}
-    alt="Product Image"
-    className="rounded-lg"
-  />
-</CardHeader>
-<CardContent className="flex flex-col items-start  p-4 pt-2">
-        <p className="w-full font-medium flex items-center justify-between">
-          <span>the name</span>
-          <span>the price</span>
-        </p>
-        <span className="text-sm text-black">the category</span>
-      </CardContent>
-</Card> */
 }
