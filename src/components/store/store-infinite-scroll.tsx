@@ -1,10 +1,4 @@
 import Image from "next/image";
-import olive from "../../../public/olive.jpg";
-import almond from "../../../public/almond.jpg";
-import argan from "../../../public/argan.jpg";
-import avocado from "../../../public/avocado.jpg";
-import coconut from "../../../public/coconut.jpg";
-import rosehip from "../../../public/rosehip.jpg";
 
 export default function InfiniteScroll() {
   const items = [
@@ -12,14 +6,26 @@ export default function InfiniteScroll() {
       key="1"
       className="relative flex justify-center items-center select-none group px-10"
     >
-      <Image src={olive} alt="olive" className="animate-scroll-card" />
+      <Image
+        src="/olive.jpg"
+        alt="Olive tree"
+        width={1000}
+        height={600}
+        className="animate-scroll-card"
+      />
       <h3 className="text-6xl font-bold text-black absolute">Olive</h3>
     </div>,
     <div
       key="2"
       className="relative flex justify-center items-center select-none group px-10"
     >
-      <Image src={argan} alt="olive" className="animate-scroll-card" />
+      <Image
+        src="/argan.jpg"
+        alt="Argan tree"
+        width={1000}
+        height={600}
+        className="animate-scroll-card"
+      />
       <h3 className="text-6xl font-bold text-black absolute">Argan</h3>
     </div>,
     ,
@@ -27,28 +33,52 @@ export default function InfiniteScroll() {
       key="3"
       className="relative flex justify-center items-center select-none group px-10"
     >
-      <Image src={avocado} alt="olive" className="animate-scroll-card" />
+      <Image
+        src="/avocado.jpg"
+        alt="Avocado tree"
+        width={1000}
+        height={600}
+        className="animate-scroll-card"
+      />
       <h3 className="text-6xl font-bold text-black absolute">Avocado</h3>
     </div>,
     <div
       key="4"
       className="relative flex justify-center items-center select-none group px-10"
     >
-      <Image src={coconut} alt="olive" className="animate-scroll-card" />
+      <Image
+        src="/coconut.jpg"
+        alt="Coconut tree"
+        width={1000}
+        height={600}
+        className="animate-scroll-card"
+      />
       <h3 className="text-6xl font-bold text-black absolute">Coconut</h3>
     </div>,
     <div
       key="5"
       className="relative flex justify-center items-center select-none group px-10"
     >
-      <Image src={rosehip} alt="olive" className="animate-scroll-card" />
+      <Image
+        src="/rosehip.jpg"
+        alt="Rosehip tree"
+        width={1000}
+        height={600}
+        className="animate-scroll-card"
+      />
       <h3 className="text-6xl font-bold text-black absolute">Rosehip</h3>
     </div>,
     <div
       key="6"
       className="relative flex justify-center items-center select-none group px-10"
     >
-      <Image src={almond} alt="olive" className="animate-scroll-card" />
+      <Image
+        src="/almond.jpg"
+        alt="Almond tree"
+        width={1000}
+        height={600}
+        className="animate-scroll-card"
+      />
       <h3 className="text-6xl font-bold text-black absolute">Almond</h3>
     </div>,
   ];
