@@ -1,7 +1,17 @@
 "use client";
-import { Star, Quote, Heart, BadgeCheck } from "lucide-react";
+import React, { useState } from "react";
+import {
+  Star,
+  ChevronLeft,
+  ChevronRight,
+  Quote,
+  Heart,
+  BadgeCheck,
+} from "lucide-react";
 
 const ReviewSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const reviews = [
     {
       id: 1,
@@ -37,6 +47,14 @@ const ReviewSection = () => {
       verified: true,
     },
   ];
+
+  const nextReview = () => {
+    setActiveIndex((prev) => (prev + 1) % reviews.length);
+  };
+
+  const prevReview = () => {
+    setActiveIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
 
   return (
     <section className="py-24  max-w-screen-lg mx-auto" id="why-nvh">
@@ -90,7 +108,7 @@ const ReviewSection = () => {
 
             <div className="space-y-6 text-center">
               <div className="flex justify-center gap-1">
-                {[...Array(reviews[0].rating)].map((_, i) => (
+                {[...Array(reviews[activeIndex].rating)].map((_, i) => (
                   <Star
                     key={i}
                     className="w-5 h-5 fill-yellow-400 text-yellow-400"
@@ -99,28 +117,28 @@ const ReviewSection = () => {
               </div>
 
               <p className="text-xl text-neutral-700 leading-relaxed italic">
-                "{reviews[0].review}"
+                "{reviews[activeIndex].review}"
               </p>
 
               <div className="inline-block px-4 py-1 bg-neutral-100 rounded-full text-sm text-neutral-600">
-                {reviews[0].product}
+                {reviews[activeIndex].product}
               </div>
 
               <div className="pt-6">
                 <div className="flex items-center justify-center gap-4">
                   <img
-                    src={reviews[0].image}
-                    alt={reviews[0].name}
+                    src={reviews[activeIndex].image}
+                    alt={reviews[activeIndex].name}
                     className="w-16 h-16 rounded-full object-cover"
                   />
                   <div className="text-left">
                     <p className="font-medium text-neutral-800">
-                      {reviews[0].name}
+                      {reviews[activeIndex].name}
                     </p>
                     <p className="text-sm text-neutral-600">
-                      {reviews[0].title}
+                      {reviews[activeIndex].title}
                     </p>
-                    {reviews[0].verified && (
+                    {reviews[activeIndex].verified && (
                       <p className="text-xs text-emerald-600 mt-1">
                         Verified Purchase
                       </p>
@@ -131,6 +149,19 @@ const ReviewSection = () => {
             </div>
           </div>
         </div>
+
+        <button
+          onClick={prevReview}
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 bg-white w-12 h-12 rounded-full shadow-md flex items-center justify-center hover:bg-neutral-50 transition-colors"
+        >
+          <ChevronLeft className="w-6 h-6 text-neutral-600" />
+        </button>
+        <button
+          onClick={nextReview}
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 bg-white w-12 h-12 rounded-full shadow-md flex items-center justify-center hover:bg-neutral-50 transition-colors"
+        >
+          <ChevronRight className="w-6 h-6 text-neutral-600" />
+        </button>
       </div>
     </section>
   );
