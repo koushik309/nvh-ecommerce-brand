@@ -7,19 +7,19 @@ import i6 from "../../public/6.jpg";
 export const products = [
   {
     id: 1,
-    name: "Radiance Revival Serum",
+    name: "Eternal Youth",
     description:
       "A luxury serum enriched with vitamins C and E to restore your skin's natural glow.",
     category: "Serums",
     price: 169,
     stock: 1120,
-    image: i1,
+    image: i3,
     rating: 4.8,
     tags: ["Glow", "Anti-Aging", "Hydrating"],
   },
   {
     id: 2,
-    name: "Silken Touch Moisturizer",
+    name: "Silken Touch",
     description:
       "A deeply hydrating moisturizer with hyaluronic acid and shea butter.",
     category: "Moisturizers",
@@ -31,19 +31,19 @@ export const products = [
   },
   {
     id: 3,
-    name: "Pure Bliss Cleansing Balm",
+    name: "Pure Bliss",
     description:
       "A gentle cleansing balm that removes makeup and impurities while nourishing the skin.",
     category: "Cleansers",
     price: 139,
     stock: 1150,
-    image: i3,
+    image: i1,
     rating: 4.6,
     tags: ["Gentle", "Makeup Remover", "Hydrating"],
   },
   {
     id: 4,
-    name: "Eternal Youth Eye Cream",
+    name: "Radiance Revival",
     description:
       "A rejuvenating eye cream to reduce puffiness and diminish fine lines.",
     category: "Eye Care",
@@ -55,25 +55,25 @@ export const products = [
   },
   {
     id: 5,
-    name: "Velvet Veil Night Cream",
+    name: "Velvet Veil",
     description:
       "A restorative night cream that works overnight to repair and hydrate your skin.",
     category: "Night Care",
     price: 379,
     stock: 170,
-    image: i5,
+    image: i6,
     rating: 4.7,
     tags: ["Repairing", "Hydrating", "Anti-Aging"],
   },
   {
     id: 6,
-    name: "GlowShield Sunscreen SPF7",
+    name: "GlowShield SPF7",
     description:
       "A lightweight sunscreen offering broad-spectrum protection with a matte finish.",
     category: "Sunscreens",
     price: 134,
     stock: 2100,
-    image: i6,
+    image: i5,
     rating: 4.5,
     tags: ["Sun Protection", "Lightweight", "Non-Greasy"],
   },

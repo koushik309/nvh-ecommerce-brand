@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image, { StaticImageData } from "next/image";
-import p1 from "../../public/1.jpg";
 import { Package, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
