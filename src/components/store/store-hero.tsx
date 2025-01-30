@@ -10,7 +10,7 @@ export default function HeroSection() {
         className="absolute bottom-0 right-0 h-[300px] w-auto"
       />
       <p className="ml-2 text-6xl leading-[62px] font-extralight italic">
-        Timeless Beauty, Redefined. <br />
+        Timeless Beauty, Redefined! <br />
         Your Skin Deserves{" "}
         <span className="underline underline-offset-8 font-medium">
           the Best.
