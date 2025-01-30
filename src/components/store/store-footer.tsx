@@ -20,6 +20,36 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      <div className="border-t border-neutral-800 pt-8 mt-8 text-sm text-neutral-400 max-w-screen-lg mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <p>© {`${new Date().getFullYear()}`} NVH®. All rights reserved.</p>
+          <div className="flex gap-6">
+            {/* <a href="#" className="hover:text-white transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              Terms of Service
+            </a> */}
+            {/* <a href="#" className="hover:text-white transition-colors">
+              Shipping
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              Returns
+            </a> */}
+            <span>
+              Developed by{" "}
+              <a
+                target="_blank"
+                href="https://nzar.dev"
+                className="underline underline-offset-4 hover:text-white transition-colors"
+              >
+                Nzar.dev
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 }
