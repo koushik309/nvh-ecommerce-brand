@@ -1,5 +1,6 @@
 import { products } from "@/lib/app-data";
 import ProductsCard from "@/components/store/product-card-store";
+import Link from "next/link";
 
 export default function Products() {
   return (
@@ -12,13 +13,14 @@ export default function Products() {
       </div>
       <div className="flex gap-4 flex-wrap justify-start w-full h-full rounded-xl p-2">
         {products.map((product) => (
-          <ProductsCard
-            key={product.price}
-            image={product.image}
-            price={product.price}
-            category={product.category}
-            name={product.name}
-          />
+          <Link key={product.route} href={`/products/${product.route}`}>
+            <ProductsCard
+              image={product.image}
+              price={product.price}
+              category={product.category}
+              name={product.name}
+            />
+          </Link>
         ))}
       </div>
     </section>

@@ -8,9 +8,10 @@ export const products = [
   {
     id: 1,
     name: "Eternal Youth",
+    route: "eternal-youth-serum",
     description:
       "A luxury serum enriched with vitamins C and E to restore your skin's natural glow.",
-    category: "Serums",
+    category: "Serum",
     price: 169,
     stock: 1120,
     image: i3,
@@ -20,9 +21,10 @@ export const products = [
   {
     id: 2,
     name: "Silken Touch",
+    route: "silken-touch-moisturizer",
     description:
       "A deeply hydrating moisturizer with hyaluronic acid and shea butter.",
-    category: "Moisturizers",
+    category: "Moisturizer",
     price: 159,
     stock: 185,
     image: i2,
@@ -32,9 +34,10 @@ export const products = [
   {
     id: 3,
     name: "Pure Bliss",
+    route: "pure-bliss-cleanser",
     description:
       "A gentle cleansing balm that removes makeup and impurities while nourishing the skin.",
-    category: "Cleansers",
+    category: "Cleanser",
     price: 139,
     stock: 1150,
     image: i1,
@@ -44,6 +47,7 @@ export const products = [
   {
     id: 4,
     name: "Radiance Revival",
+    route: "radiance-revival-eye-care",
     description:
       "A rejuvenating eye cream to reduce puffiness and diminish fine lines.",
     category: "Eye Care",
@@ -56,6 +60,7 @@ export const products = [
   {
     id: 5,
     name: "Velvet Veil",
+    route: "velvet-veil-night-care",
     description:
       "A restorative night cream that works overnight to repair and hydrate your skin.",
     category: "Night Care",
@@ -68,9 +73,10 @@ export const products = [
   {
     id: 6,
     name: "GlowShield SPF7",
+    route: "glowShield-spf7-sunscreen",
     description:
       "A lightweight sunscreen offering broad-spectrum protection with a matte finish.",
-    category: "Sunscreens",
+    category: "Sunscreen",
     price: 134,
     stock: 2100,
     image: i5,
