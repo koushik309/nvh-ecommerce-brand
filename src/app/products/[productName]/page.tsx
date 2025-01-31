@@ -106,6 +106,57 @@ export default function ProductPage() {
           </div>
         </div>
       </main>
+
+      <section className="flex w-full justify-around items-center py-20">
+        <div className="flex flex-col justify-center items-center max-w-80">
+          <Truck strokeWidth={1} className="size-20" />
+          <h3 className="text-3xl my-2">Free shipping</h3>
+          <p className="text-center">
+            Enjoy the convenience of free shipment on all your orders.
+          </p>
+        </div>
+        <div className="flex flex-col justify-center items-center max-w-80">
+          <HeartHandshake strokeWidth={1} className="size-20" />
+          <h3 className="text-3xl my-2">Easy refund</h3>
+          <p className="text-center">
+            Shop with confidence that our easy refund policy has got.
+          </p>
+        </div>
+        <div className="flex flex-col justify-center items-center max-w-80">
+          <Euro strokeWidth={1} className="size-20" />
+          <h3 className="text-3xl my-2">Flexible payment</h3>
+          <p className="text-center">
+            We understand that flexibility is key to payments.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="text-center mb-10">
+          <h2 className="text-5xl font-light text-white mb-3">
+            Recent products
+          </h2>
+          <p className="text-lg text-neutral-400">
+            Ethically sourced rare oils, carefully selected for their
+            extraordinary benefits
+          </p>
+        </div>
+        <div className="flex items-center gap-5 justify-center">
+          {products
+            .filter((i) => product.id !== i.id)
+            .slice(randomNumber, randomNumber + 3)
+            .map((product) => (
+              <Link key={product.route} href={`/products/${product.route}`}>
+                <ProductsCard
+                  image={product.image}
+                  price={product.price}
+                  category={product.category}
+                  name={product.name}
+                />
+              </Link>
+            ))}
+        </div>
+      </section>
     </>
   );
 }
