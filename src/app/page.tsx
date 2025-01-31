@@ -1,8 +1,3 @@
-// import { redirect } from "next/navigation";
-// export default function Home() {
-//   redirect("/admin/dashboard");
-// }
-
 import Header from "@/components/store/store-header";
 import Products from "@/components/store/store-products";
 import InfiniteScroll from "@/components/store/store-infinite-scroll";
