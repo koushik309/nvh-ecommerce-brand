@@ -1,5 +1,4 @@
 import OrdersTabs from "@/components/orders-tabs";
-import ProductsCard from "@/components/products-card";
 import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
 import { products } from "@/lib/app-data";
