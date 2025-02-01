@@ -17,6 +17,7 @@ import Link from "next/link";
 
 export function CardButton() {
   const [quantity, setQuantity] = useState(1);
+  const [checkoutClick, setCheckoutClick] = useState("Continue to Checkout");
   const [cartProducts, setCartProducts] = useState([
     {
       productId: 1,
@@ -100,8 +101,15 @@ export function CardButton() {
                 <span>Subtotal:</span>
                 <span>$ 129.00 USD</span>
               </p>
-              <Button type="submit" className="w-full">
-                Continue to Checkout
+              <Button
+                type="submit"
+                className={`w-full ${
+                  checkoutClick === "Checkout is disabled" &&
+                  "bg-red-300 hover:bg-red-200"
+                }`}
+                onClick={() => setCheckoutClick("Checkout is disabled")}
+              >
+                {checkoutClick}
               </Button>
             </div>
           </>

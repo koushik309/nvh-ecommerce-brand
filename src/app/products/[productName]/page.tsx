@@ -10,13 +10,13 @@ import { useState } from "react";
 import ProductsCard from "@/components/store/product-card-store";
 
 export default function ProductPage() {
+  const [quantity, setQuantity] = useState(1);
+
   const { productName } = useParams();
   const product = products.find((p) => p.route === productName);
+  const randomNumber = Math.floor(Math.random() * 3);
 
   if (!product) return notFound();
-
-  const [quantity, setQuantity] = useState(1);
-  const randomNumber = Math.floor(Math.random() * 3);
 
   return (
     <>
