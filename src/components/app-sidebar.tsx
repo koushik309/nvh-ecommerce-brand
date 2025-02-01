@@ -2,22 +2,17 @@
 
 import * as React from "react";
 import {
-  AudioWaveform,
   CreditCard,
   ShoppingCart,
   Settings,
   Bell,
-  Frame,
   Package,
-  Map,
-  PieChart,
   UsersRound,
   LayoutGrid,
   LogOut,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
-import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
 import {
   Sidebar,

@@ -1,11 +1,12 @@
 import Image from "next/image";
-import hero from "../../../public/hero.png";
 
 export default function HeroSection() {
   return (
     <section className="select-none my-24 flex justify-start items-center border  w-full h-[200px] relative max-w-screen-lg mx-auto rounded-t-xl">
       <Image
-        src={hero}
+        width={420}
+        height={594}
+        src="/hero.png"
         alt="cover"
         className="absolute bottom-0 right-0 h-[300px] w-auto drop-shadow-[-1px_-1px_0_white]"
       />
