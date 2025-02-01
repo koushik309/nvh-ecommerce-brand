@@ -10,13 +10,13 @@ import HeroSection from "@/components/store/store-hero";
 export default function Home() {
   return (
     <>
-      {/* <Header />
+      <Header />
       <HeroSection />
       <Products />
       <BestSeller />
       <InfiniteScroll />
       <ReviewSection />
-      <About /> */}
+      <About />
       <Footer />
     </>
   );
