@@ -19,9 +19,10 @@ export default function About() {
           className="h-10 w-auto select-none mb-2"
         />
         <p className="text-center text-lg text-neutral-800 max-w-[600px] leading-relaxed">
-          Born from the fusion of nature's finest ingredients and cutting-edge
-          science, NVH® represents the pinnacle of luxury skincare. Each formula
-          is meticulously crafted to deliver transformative results.
+          Born from the fusion of nature&apos;s finest ingredients and
+          cutting-edge science, NVH® represents the pinnacle of luxury skincare.
+          Each formula is meticulously crafted to deliver transformative
+          results.
         </p>
 
         <div className="flex gap-8 w-full py-8 justify-center">

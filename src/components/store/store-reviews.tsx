@@ -117,7 +117,7 @@ const ReviewSection = () => {
               </div>
 
               <p className="text-xl text-neutral-700 leading-relaxed italic">
-                "{reviews[activeIndex].review}"
+                &quot;{reviews[activeIndex].review}&quot;
               </p>
 
               <div className="inline-block px-4 py-1 bg-neutral-100 rounded-full text-sm text-neutral-600">

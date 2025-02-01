@@ -15,7 +15,7 @@ import { products } from "@/lib/app-data";
 import Image from "next/image";
 import Link from "next/link";
 
-export function CardButton({}: {}) {
+export function CardButton() {
   const [quantity, setQuantity] = useState(1);
   const [cartProducts, setCartProducts] = useState([
     {

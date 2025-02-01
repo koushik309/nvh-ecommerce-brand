@@ -30,8 +30,8 @@ export default function BestSeller() {
             Eternal Youth
           </h3>
           <p className="text-black text-lg mb-6 max-w-[380px]">
-            A luxury serum enriched with vitamins C and E to restore your skin's
-            natural glow.
+            A luxury serum enriched with vitamins C and E to restore your
+            skin&apos;s natural glow.
           </p>
           <button className="py-2.5 flex items-center gap-2 hover:bg-black/80 transition-colors duration-300 px-8 bg-black rounded-lg font-medium">
             <ShoppingCart className="mr-2 h-5 w-5" />
