@@ -9,7 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Minus, Plus, ShoppingBag } from "lucide-react";
+import { Minus, Plus, ShoppingBag, X } from "lucide-react";
 import { useState } from "react";
 import { products } from "@/lib/app-data";
 import Image from "next/image";
@@ -38,7 +38,7 @@ export function CardButton() {
       </SheetTrigger>
       <SheetContent className="flex flex-col">
         <SheetHeader>
-          <SheetTitle>Your Cart</SheetTitle>
+          <SheetTitle className="text-start">Your Cart</SheetTitle>
         </SheetHeader>
         {cartProducts.length ? (
           <>
@@ -60,14 +60,14 @@ export function CardButton() {
                       cartProducts[0].items}{" "}
                     USD
                   </span>
-                  <div className="flex justify-between w-full items-center">
+                  <div className="flex justify-between gap-2 mt-1 w-full items-center">
                     <button
                       onClick={() => setCartProducts(() => [])}
-                      className="underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity"
+                      className="p-1 border border-white/40 rounded-xl"
                     >
-                      Remove
+                      <X strokeWidth={1} className="size-5" />
                     </button>
-                    <div className="flex items-center border border-white/40 rounded-xl px-2 py-1">
+                    <div className="flex items-center border border-white/40 rounded-xl px-2 py-0.5 sm:py-1">
                       <button
                         className="text-white/60 hover:text-white"
                         onClick={() =>
@@ -78,7 +78,7 @@ export function CardButton() {
                       </button>
                       <input
                         type="number"
-                        className="w-12 text-center bg-transparent outline-none"
+                        className="w-8 sm:w-12 text-center bg-transparent outline-none"
                         value={quantity}
                         min="1"
                         onChange={(e) =>

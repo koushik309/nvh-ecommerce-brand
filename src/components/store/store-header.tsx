@@ -39,6 +39,7 @@ export default function Header({ products }: { products?: boolean }) {
         )}
 
         <div className="flex gap-2">
+          <CardButton />
           {!products && (
             <button
               className="p-1 hover:bg-white/5 transition-colors rounded-lg"
@@ -47,8 +48,6 @@ export default function Header({ products }: { products?: boolean }) {
               <Menu strokeWidth={1} className="size-7 md:hidden" />
             </button>
           )}
-
-          <CardButton />
         </div>
 
         <div
