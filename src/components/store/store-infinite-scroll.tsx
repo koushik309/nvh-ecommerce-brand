@@ -4,7 +4,7 @@ export default function InfiniteScroll() {
   const items = [
     <div
       key="1"
-      className="relative flex justify-center items-center select-none group px-10"
+      className="relative flex justify-center items-center group px-10"
     >
       <Image
         src="/olive.jpg"
@@ -17,7 +17,7 @@ export default function InfiniteScroll() {
     </div>,
     <div
       key="2"
-      className="relative flex justify-center items-center select-none group px-10"
+      className="relative flex justify-center items-center group px-10"
     >
       <Image
         src="/argan.jpg"
@@ -31,7 +31,7 @@ export default function InfiniteScroll() {
     ,
     <div
       key="3"
-      className="relative flex justify-center items-center select-none group px-10"
+      className="relative flex justify-center items-center group px-10"
     >
       <Image
         src="/avocado.jpg"
@@ -44,7 +44,7 @@ export default function InfiniteScroll() {
     </div>,
     <div
       key="4"
-      className="relative flex justify-center items-center select-none group px-10"
+      className="relative flex justify-center items-center group px-10"
     >
       <Image
         src="/coconut.jpg"
@@ -57,7 +57,7 @@ export default function InfiniteScroll() {
     </div>,
     <div
       key="5"
-      className="relative flex justify-center items-center select-none group px-10"
+      className="relative flex justify-center items-center group px-10"
     >
       <Image
         src="/rosehip.jpg"
@@ -70,7 +70,7 @@ export default function InfiniteScroll() {
     </div>,
     <div
       key="6"
-      className="relative flex justify-center items-center select-none group px-10"
+      className="relative flex justify-center items-center group px-10"
     >
       <Image
         src="/almond.jpg"
@@ -83,17 +83,17 @@ export default function InfiniteScroll() {
     </div>,
   ];
   return (
-    <section className="py-24 w-full">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl font-light text-white mb-3">
+    <section className="py-12 sm:py-24 px-4 w-full">
+      <div className="text-center mb-10 sm:mb-16">
+        <h2 className="text-3xl sm:text-5xl font-light text-white mb-3">
           Pure & Precious Oils
         </h2>
-        <p className="text-lg text-neutral-400">
+        <p className="sm:text-lg text-white/60">
           Ethically sourced rare oils, carefully selected for their
           extraordinary benefits
         </p>
       </div>
-      <div className="bg-[#F8F8F8] h-[200px] w-full flex items-center overflow-hidden relative">
+      <div className="bg-[#F8F8F8] h-52 w-full flex items-center overflow-hidden relative">
         <div className="animate-scroll flex items-center absolute whitespace-nowrap">
           {items}
           {items}

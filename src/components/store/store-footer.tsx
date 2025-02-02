@@ -22,7 +22,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/15 pt-8 mt-8 text-sm text-neutral-400 max-w-screen-lg mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-2">
           <p>© {`${new Date().getFullYear()}`} NVH®. All rights reserved.</p>
           <div className="flex gap-6">
             {/* <a href="#" className="hover:text-white transition-colors">

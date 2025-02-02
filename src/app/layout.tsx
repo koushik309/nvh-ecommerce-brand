@@ -22,8 +22,10 @@ export default function RootLayout({
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
-        <body className={`${inter.className} antialiased`}>
+        <head>
+          <meta name="theme-color" content="#09090b" />
+        </head>
+        <body className={`${inter.className} antialiased select-none`}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

@@ -4,7 +4,7 @@ import { Menu } from "lucide-react";
 
 export default function Header({ products }: { products?: boolean }) {
   return (
-    <header className="py-5 sm:py-10 px-4 flex flex-col gap-6 sm:gap-10 max-w-screen-xl mx-auto">
+    <header className="pt-6 pb-12 sm:py-12 px-4 flex flex-col gap-6 sm:gap-10 max-w-screen-xl mx-auto">
       <h1 className="text-center text-4xl sm:text-6xl md:text-7xl font-bold uppercase">
         NZAR Velvet Hour
       </h1>
