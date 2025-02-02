@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Star,
   ChevronLeft,
@@ -57,15 +57,20 @@ const ReviewSection = () => {
   };
 
   return (
-    <section className="py-24  max-w-screen-lg mx-auto" id="why-nvh">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl font-light text-white mb-3">Why NVH®</h2>
-        <p className="text-lg text-neutral-400">
+    <section
+      id="why-nvh"
+      className="py-12 sm:py-24 max-w-screen-lg mx-auto px-4"
+    >
+      <div className="text-center mb-10 sm:mb-16">
+        <h2 className="text-3xl sm:text-5xl font-light text-white mb-3">
+          Why NVH®
+        </h2>
+        <p className="sm:text-lg text-white/60">
           Discover why leading beauty experts and enthusiasts choose NVH®
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-8 max-w-4xl mx-auto">
         <div className="text-center px-8 py-4 bg-white rounded-xl">
           <h3 className="text-4xl font-light text-neutral-800 flex gap-2 items-center justify-center">
             <Star className="size-8 fill-yellow-400 text-yellow-400" /> 4.7
@@ -91,10 +96,10 @@ const ReviewSection = () => {
       </div>
 
       <div className="text-center mt-20 mb-12">
-        <h2 className="text-4xl font-light text-white mb-3">
+        <h2 className="text-2xl sm:text-4xl font-light text-white mb-3">
           Experts Love NVH®
         </h2>
-        <p className="text-lg text-neutral-400">
+        <p className="sm:text-lg text-white/60">
           Trusted reviews from the foremost names in the domain.
         </p>
       </div>
@@ -116,7 +121,7 @@ const ReviewSection = () => {
                 ))}
               </div>
 
-              <p className="text-xl text-neutral-700 leading-relaxed italic">
+              <p className="md:text-xl text-neutral-700 leading-relaxed italic">
                 &quot;{reviews[activeIndex].review}&quot;
               </p>
 

@@ -4,14 +4,19 @@ import Link from "next/link";
 
 export default function Products() {
   return (
-    <section id="our-collection" className="py-24 max-w-screen-md mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl font-light text-white mb-3">Our Collection</h2>
-        <p className="text-lg text-neutral-400">
+    <section
+      id="our-collection"
+      className="py-12 sm:py-24 max-w-screen-md mx-auto"
+    >
+      <div className="text-center mb-10 sm:mb-16">
+        <h2 className="text-3xl sm:text-5xl font-light text-white mb-3">
+          Our Collection
+        </h2>
+        <p className="sm:text-lg text-white/60">
           Each product is a masterpiece of luxury skincare innovation
         </p>
       </div>
-      <div className="flex gap-4 flex-wrap justify-start w-full h-full rounded-xl p-2">
+      <div className="flex flex-wrap gap-4 justify-center items-center w-full rounded-xl p-2">
         {products.map((product) => (
           <Link key={product.route} href={`/products/${product.route}`}>
             <ProductsCard
