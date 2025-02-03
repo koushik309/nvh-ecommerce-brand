@@ -6,7 +6,7 @@ A luxury skincare Ecommerce platform with an Admin Dashboard. Designed for elega
 
 🚀 **[Live Demo Here](https://nvh.nzar.dev)**
 
-[![Project Preview](/public/cover.png)](https://nvh.nzar.dev)
+[![Project Preview](/public/cover.jpg)](https://nvh.nzar.dev)
 
 ---
 
