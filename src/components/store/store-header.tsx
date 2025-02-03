@@ -42,10 +42,10 @@ export default function Header({ products }: { products?: boolean }) {
           <CardButton />
           {!products && (
             <button
-              className="p-1 hover:bg-white/5 transition-colors rounded-lg"
+              className="p-1 hover:bg-white/5 transition-colors rounded-lg md:hidden"
               onClick={() => setOpenMenu(!openMenu)}
             >
-              <Menu strokeWidth={1} className="size-7 md:hidden" />
+              <Menu strokeWidth={1} className="size-7" />
             </button>
           )}
         </div>
