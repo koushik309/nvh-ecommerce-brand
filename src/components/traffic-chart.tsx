@@ -1,64 +1,48 @@
-"use client";
-
-import { Bar, BarChart, CartesianGrid, LabelList, XAxis } from "recharts";
-
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
-
-const chartData = [
-  { stage: "Total Traffic", visitors: 19200 },
-  { stage: "Product Page", visitors: 10120 },
-  { stage: "Add to Cart", visitors: 4860 },
-  { stage: "Checkout", visitors: 2110 },
-  { stage: "Purchases", visitors: 820 },
+const salesData = [
+  {
+    id: 1,
+    name: "Alexandra Chen",
+    email: "alexandra.chen@gmail.com",
+    amount: 338.0,
+  },
+  {
+    id: 2,
+    name: "Marcus Rodriguez",
+    email: "m.rodriguez@gmail.com",
+    amount: 169.0,
+  },
+  {
+    id: 3,
+    name: "Sophia Patel",
+    email: "sophia.patel@gmail.com",
+    amount: 249.0,
+  },
+  {
+    id: 4,
+    name: "Ethan Brooks",
+    email: "ethan.b@gmail.com",
+    amount: 379.0,
+  },
+  {
+    id: 5,
+    name: "Luna Kawasaki",
+    email: "l.kawasaki@gmail.com",
+    amount: 159.0,
+  },
 ];
 
-const chartConfig = {
-  visitors: {
-    label: "visitors",
-    color: "hsl(var(--chart-1))",
-  },
-} satisfies ChartConfig;
-
-export function TrafficChart() {
+export function RecentSales() {
   return (
-    <Card className="w-full pt-[75px] h-min  bg-muted/50">
-      <CardContent>
-        <ChartContainer config={chartConfig}>
-          <BarChart
-            accessibilityLayer
-            data={chartData}
-            margin={{
-              top: 20,
-            }}
-          >
-            <CartesianGrid vertical={true} />
-            <XAxis
-              dataKey="stage"
-              tickLine={false}
-              tickMargin={10}
-              axisLine={false}
-            />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent hideLabel />}
-            />
-            <Bar dataKey="visitors" fill="var(--color-visitors)" radius={6}>
-              <LabelList
-                position="top"
-                offset={8}
-                className="fill-foreground"
-                fontSize={12}
-              />
-            </Bar>
-          </BarChart>
-        </ChartContainer>
-      </CardContent>
-    </Card>
+    <div className="space-y-8">
+      {salesData.map(({ name, email, amount }) => (
+        <div className="flex flex-1 flex-wrap items-center justify-between">
+          <div className="space-y-1">
+            <p className="text-sm font-medium leading-none">{name}</p>
+            <p className="text-sm text-muted-foreground">{email}</p>
+          </div>
+          <div className="font-medium">+${amount.toFixed(2)}</div>
+        </div>
+      ))}
+    </div>
   );
 }
