@@ -1,6 +1,14 @@
 import { SalesChart } from "@/components/sales-chart";
-import { TrafficChart } from "@/components/traffic-chart";
-import { TrendingUp } from "lucide-react";
+import { RecentSales } from "@/components/traffic-chart";
+import { Activity, CreditCard, DollarSign, ShoppingCart } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 
 const metrics = [
   {
@@ -8,83 +16,85 @@ const metrics = [
     title: "Total Sales",
     value: "$68,450",
     percentageChange: "↑ 12%",
-    changeDescription: "from last month",
-    changeStyle: "bg-green-200 text-green-700",
+    icon: CreditCard,
   },
   {
     id: 2,
     title: "Total Orders",
     value: "820",
-    percentageChange: "↑ 8%",
-    changeDescription: "from last month",
-    changeStyle: "bg-green-200 text-green-700",
+    percentageChange: "↓ 6%",
+    icon: ShoppingCart,
   },
   {
     id: 3,
     title: "Net Profits",
     value: "$18,200",
-    percentageChange: "↑ 5%",
-    changeDescription: "from last month",
-    changeStyle: "bg-green-200 text-green-700",
+    percentageChange: "↑ 12%",
+    icon: DollarSign,
   },
   {
     id: 4,
     title: "Conversion Rate",
     value: "4.2%",
     percentageChange: "↓ 0.5%",
-    changeDescription: "from last month",
-    changeStyle: "bg-red-200 text-red-700",
+    icon: Activity,
   },
 ];
 
 export default function Dashboard() {
   return (
     <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-      <div className="grid auto-rows-min gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {metrics.map((metric) => (
-          <section
-            key={metric.id}
-            className="p-4 pl-6 h-32 w-auto rounded-xl bg-muted/50 flex flex-col gap-1"
-          >
-            <span className="text-foreground/50">{metric.title}</span>
-            <h3 className="text-3xl font-bold mt-1">{metric.value}</h3>
-            <p className="text-foreground/40">
-              <span
-                className={`${metric.changeStyle} font-bold py-0.5 px-3 rounded text-xs mr-1`}
-              >
-                {metric.percentageChange}
-              </span>
-              {metric.changeDescription}
-            </p>
-          </section>
-        ))}
-      </div>
-      <div className="flex gap-4  flex-1 rounded-xl">
-        <div className="flex w-1/2 lg:w-[55%] relative">
-          <SalesChart />
+      <Tabs
+        orientation="vertical"
+        defaultValue="overview"
+        className="space-y-4"
+      >
+        <TabsContent value="overview" className="space-y-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {metrics.map((metric) => (
+              <Card key={metric.id} className="bg-muted/10 border">
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">
+                    {metric.title}
+                  </CardTitle>
 
-          <div className="absolute inset-6 flex flex-col gap-2 w-max h-min">
-            <div className="flex items-center gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-            </div>
-            <div className="flex items-center gap-2 leading-none text-muted-foreground">
-              April - June 2025
-            </div>
+                  {<metric.icon className="size-4 text-muted-foreground" />}
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">{metric.value}</div>
+                  <p className="text-xs text-muted-foreground">
+                    {metric.percentageChange} from last month
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-        </div>
-        <div className="flex w-1/2 lg:w-[45%] relative">
-          <TrafficChart />
-
-          <div className="absolute inset-6 flex flex-col gap-2 w-max h-min">
-            <div className="flex items-center gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-            </div>
-            <div className="flex items-center gap-2 leading-none text-muted-foreground">
-              April - June 2025
-            </div>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-7">
+            <Card className="col-span-1 lg:col-span-4 bg-muted/10 border">
+              <CardHeader>
+                <CardTitle>Sales Overview</CardTitle>
+                <CardDescription>
+                  You made $68,450 in total sales this month.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pl-2">
+                <SalesChart />
+              </CardContent>
+            </Card>
+            <Card className="col-span-1 lg:col-span-3 bg-muted/10 border">
+              <CardHeader>
+                <CardTitle>Recent Orders</CardTitle>
+                <CardDescription>
+                  You made 820 orders this month.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <RecentSales />
+              </CardContent>
+            </Card>
           </div>
-        </div>
-      </div>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }
