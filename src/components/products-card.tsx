@@ -15,7 +15,7 @@ export default function ProductsCard({
   name: string;
 }) {
   return (
-    <Card className="bg-muted max-w-60 max-h-min cursor-pointer hover:bg-zinc-700 transition-colors">
+    <Card className="bg-muted/50 border max-w-60 max-h-min cursor-pointer hover:bg-muted transition-colors">
       <CardHeader className="p-2 relative">
         <Image
           width={1070}

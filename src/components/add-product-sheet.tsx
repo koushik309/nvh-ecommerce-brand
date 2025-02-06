@@ -36,7 +36,7 @@ export function AddProductSheet() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button>
+        <Button className="h-8">
           <PlusCircle className="mr-2 h-4 w-4" />
           Add Product
         </Button>
