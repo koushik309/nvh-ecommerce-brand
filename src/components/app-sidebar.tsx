@@ -2,14 +2,13 @@
 
 import * as React from "react";
 import {
-  CreditCard,
   ShoppingCart,
   Settings,
-  Bell,
   Package,
-  UsersRound,
   LayoutGrid,
   LogOut,
+  Blocks,
+  BellDot,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
@@ -22,15 +21,13 @@ import {
   SidebarFooter,
   SidebarMenuButton,
 } from "@/components/ui/sidebar";
-import Link from "next/link";
 import { LogoutConfirmationDialog } from "./dialog-logout-confirmation";
 
-// This is sample data.
 const data = {
   user: {
     name: "Nzar",
     email: "admin@nvh.com",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "/nzar.jpg",
   },
   navMain: [
     {
@@ -50,19 +47,14 @@ const data = {
       icon: Package,
     },
     {
-      title: "Customers",
-      url: "/customers",
-      icon: UsersRound,
-    },
-    {
-      title: "Billing",
-      url: "/billing",
-      icon: CreditCard,
+      title: "Integrations",
+      url: "/integrations",
+      icon: Blocks,
     },
     {
       title: "Notifications",
       url: "/notifications",
-      icon: Bell,
+      icon: BellDot,
     },
     {
       title: "Settings",
