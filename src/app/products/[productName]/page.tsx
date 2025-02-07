@@ -1,5 +1,6 @@
 "use client";
 import { notFound, useParams } from "next/navigation";
+import { useAppContext } from "@/context/AppContext";
 
 import { products } from "@/lib/app-data";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,7 @@ import ProductsCard from "@/components/store/product-card-store";
 
 export default function ProductPage() {
   const [quantity, setQuantity] = useState(1);
+  const { addToCart, updateItemQuantity } = useAppContext();
 
   const { productName } = useParams();
   const product = products.find((p) => p.route === productName);
@@ -101,7 +103,15 @@ export default function ProductPage() {
                   <Plus className="w-4 h-4" />
                 </button>
               </div>
-              <Button className="rounded-xl py-6 w-full">Add to Cart</Button>
+              <Button
+                onClick={() => {
+                  addToCart(product.id);
+                  updateItemQuantity(product.id, quantity);
+                }}
+                className="rounded-xl py-6 w-full"
+              >
+                Add to Cart
+              </Button>
             </div>
           </div>
         </div>

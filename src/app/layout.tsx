@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { AppProvider } from "@/context/AppContext";
 import "./globals.css";
 
 const inter = Inter({
@@ -57,14 +58,16 @@ export default function RootLayout({
           <meta name="theme-color" content="#09090b" />
         </head>
         <body className={`${inter.className} antialiased select-none`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+          <AppProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </AppProvider>
         </body>
       </html>
     </>
