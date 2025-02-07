@@ -1,13 +1,17 @@
 "use client";
-import { createContext, useContext, useState, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
 
-// Define the structure of a cart item
 interface CartItem {
   productId: number;
   items: number;
 }
 
-// Define the structure of the context
 interface AppContextType {
   cart: CartItem[];
   addToCart: (productId: number) => void;
@@ -15,29 +19,29 @@ interface AppContextType {
   updateItemQuantity: (productId: number, quantity: number) => void;
 }
 
-// Create the context
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-// Create the provider component
-export function AppProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>([
-    {
-      productId: 1,
-      items: 1,
-    },
-    {
-      productId: 2,
-      items: 3,
-    },
-  ]);
+const CART_STORAGE_KEY = "nvh_cart";
 
-  // Function to add a product to the cart
+export function AppProvider({ children }: { children: ReactNode }) {
+  const [cart, setCart] = useState<CartItem[]>([]);
+
+  useEffect(() => {
+    const storedCart = localStorage.getItem(CART_STORAGE_KEY);
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+  }, [cart]);
+
   const addToCart = (productId: number) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find(
         (item) => item.productId === productId
       );
-
       if (existingItem) {
         return prevCart.map((item) =>
           item.productId === productId
@@ -52,7 +56,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   const updateItemQuantity = (productId: number, quantity: number) => {
     if (quantity < 1) return; // Prevent negative numbers
-
     setCart((prevCart) =>
       prevCart.map((item) =>
         item.productId === productId ? { ...item, items: quantity } : item
@@ -60,7 +63,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
     );
   };
 
-  // Function to remove a product from the cart
   const removeFromCart = (productId: number) => {
     setCart((prevCart) =>
       prevCart.filter((item) => item.productId !== productId)
@@ -76,7 +78,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
   );
 }
 
-// Custom hook to use the context
 export function useAppContext() {
   const context = useContext(AppContext);
   if (!context) {
