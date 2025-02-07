@@ -1,7 +1,13 @@
-import { ShoppingCart } from "lucide-react";
+"use client";
+
+import { useAppContext } from "@/context/AppContext";
+import { CircleCheckBig, ShoppingCart, X } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function BestSeller() {
+  const { addToCart, removeFromCart } = useAppContext();
+  const [click, setClick] = useState(false);
   return (
     <section
       id="client-favorites"
@@ -32,10 +38,38 @@ export default function BestSeller() {
             A luxury serum enriched with vitamins C and E to restore your
             skin&apos;s natural glow.
           </p>
-          <button className="py-2.5 flex items-center justify-center gap-2 hover:bg-black/80 transition-colors duration-300 px-8 bg-black rounded-lg font-medium">
-            <ShoppingCart className="mr-2 h-5 w-5" />
-            Add to Cart - 139$
-          </button>
+          <div className="flex gap-2 items-center">
+            <button
+              onClick={() => {
+                addToCart(1);
+                setClick(false);
+              }}
+              className="py-2.5 w-full flex items-center justify-center gap-2 hover:bg-black/80 transition-colors duration-300 px-8 bg-black rounded-lg font-medium"
+            >
+              {click ? (
+                <>
+                  <ShoppingCart className="mr-2 h-5 w-5" />
+                  Add to Cart - 139$
+                </>
+              ) : (
+                <>
+                  <CircleCheckBig className="mr-2 h-5 w-5" />
+                  Added to Cart
+                </>
+              )}
+            </button>
+            {!click && (
+              <button
+                onClick={() => {
+                  setClick(true);
+                  removeFromCart(1);
+                }}
+                className="py-3 flex items-center justify-center hover:bg-black/80 transition-colors duration-300 px-4 bg-black rounded-lg font-medium"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </section>
