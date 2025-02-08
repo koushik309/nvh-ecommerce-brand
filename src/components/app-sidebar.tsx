@@ -22,6 +22,8 @@ import {
   SidebarFooter,
   SidebarMenuButton,
 } from "@/components/ui/sidebar";
+import Link from "next/link";
+import { LogoutConfirmationDialog } from "./dialog-logout-confirmation";
 
 // This is sample data.
 const data = {
@@ -80,13 +82,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
-        <SidebarMenuButton
-          tooltip="Log out"
-          className="hover:bg-white/10 transition-colors duration-200"
-        >
-          <LogOut />
-          <span>Log out</span>
-        </SidebarMenuButton>
+        <LogoutConfirmationDialog>
+          <SidebarMenuButton
+            tooltip="Log out"
+            className="hover:bg-white/10 transition-colors duration-200"
+          >
+            <LogOut />
+            <span>Log out</span>
+          </SidebarMenuButton>
+        </LogoutConfirmationDialog>
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
