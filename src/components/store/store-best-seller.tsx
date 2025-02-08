@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function BestSeller() {
   const { addToCart, removeFromCart } = useAppContext();
-  const [click, setClick] = useState(false);
+  const [click, setClick] = useState(true);
   return (
     <section
       id="client-favorites"
