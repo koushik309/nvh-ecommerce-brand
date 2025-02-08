@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { ForgotPasswordDialog } from "./dialog-password";
 
 export function LoginForm({
   className,
@@ -61,12 +62,14 @@ export function LoginForm({
             <div className="grid gap-2 relative">
               <div className="flex items-center">
                 <Label htmlFor="password">Password</Label>
-                <a
-                  href="#"
-                  className="ml-auto text-sm underline-offset-4 hover:underline"
-                >
-                  Forgot your password?
-                </a>
+                <ForgotPasswordDialog>
+                  <a
+                    href="#"
+                    className="ml-auto text-sm underline-offset-4 hover:underline"
+                  >
+                    Forgot your password?
+                  </a>
+                </ForgotPasswordDialog>
               </div>
 
               <Input
