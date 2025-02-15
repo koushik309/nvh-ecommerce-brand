@@ -19,11 +19,6 @@ export function LogoutConfirmationDialog({
   children: React.ReactNode;
 }>) {
   const [open, setOpen] = useState(false);
-
-  const handleLogout = () => {
-    setOpen(false);
-  };
-
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>

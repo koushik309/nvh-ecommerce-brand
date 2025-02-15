@@ -53,8 +53,11 @@ export default function Header({ products }: { products?: boolean }) {
         <div
           className={`${
             !openMenu && "-translate-y-[100%]"
-          } absolute md:hidden bg-neutral-950 inset-0 border-b flex flex-col justify-center items-center w-full p-4 pt-8 h-min transition-transform duration-300`}
+          } absolute md:hidden bg-neutral-950 z-20 inset-0 border-b flex flex-col justify-center items-center w-full p-4 pt-8 h-min transition-transform duration-300`}
         >
+          <h1 className="text-center text-4xl sm:text-6xl font-bold uppercase mb-12">
+            NZAR Velvet Hour
+          </h1>
           <nav>
             <ul className="flex flex-col justify-center items-center gap-4">
               <li className="hover:underline underline-offset-8 cursor-pointer">
@@ -72,12 +75,19 @@ export default function Header({ products }: { products?: boolean }) {
             </ul>
           </nav>
           <button
-            className="mt-2 ml-auto p-1 hover:bg-white/5 transition-colors rounded-lg"
+            className="mt-8 ml-auto p-1 hover:bg-white/5 transition-colors rounded-lg"
             onClick={() => setOpenMenu(!openMenu)}
           >
             <X strokeWidth={1} className="size-7" />
           </button>
         </div>
+
+        <Link
+          href={"/admin"}
+          className="fixed bottom-0 right-0 m-4 bg-[#F8F8F8] hover:bg-[#eaeaea] transition-colors shadow-md text-black rounded-xl py-2 px-3 z-40"
+        >
+          Admin Dashboard
+        </Link>
       </div>
     </header>
   );
