@@ -1,13 +1,7 @@
-import OrdersTabs from "@/components/orders-tabs";
+import { DataTable } from "@/components/dashboard-orders/data-table";
+import { columns } from "@/components/dashboard-orders/columns";
+import { order } from "@/lib/orders";
 
 export default function Orders() {
-  return (
-    <main className="flex h-full w-full flex-col gap-4 p-4 pt-0">
-      <div className="w-full flex flex-col gap-2 md:flex-row justify-between items-center p-2 bg-muted/50 rounded-xl">
-        <OrdersTabs />
-      </div>
-
-      <div className="w-full h-full bg-muted/50 rounded-xl"></div>
-    </main>
-  );
+  return <DataTable data={order} columns={columns} />;
 }

@@ -38,7 +38,7 @@ export default function Products() {
 
   return (
     <main className="flex h-full w-full flex-col gap-4 p-4 pt-0">
-      <div className="w-full flex flex-col gap-2 md:flex-row justify-between items-center p-2 bg-muted/50 rounded-xl">
+      <div className="w-full flex flex-col gap-2 md:flex-row justify-between items-center p-2 bg-muted/10 border rounded-xl">
         <Tabs defaultValue="all-products" onValueChange={setActiveTab}>
           <TabsList>
             <TabsTrigger value="all-products">All Products</TabsTrigger>
@@ -49,7 +49,7 @@ export default function Products() {
         </Tabs>
         <AddProductSheet />
       </div>
-      <div className="flex gap-4 flex-wrap w-full h-full bg-muted/50 rounded-xl p-2">
+      <div className="flex gap-4 flex-wrap w-full h-full bg-muted/10 border rounded-xl p-2">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <SheetDemo

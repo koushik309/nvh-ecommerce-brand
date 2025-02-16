@@ -15,6 +15,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import BreadcrumbPagePathname from "@/components/pathname";
 
 export const metadata: Metadata = {
   title: "NVH® • Admin Dahboard",
@@ -41,9 +42,7 @@ export default function RootLayout({
                     <BreadcrumbPage>Admin</BreadcrumbPage>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator className="hidden md:block" />
-                  <BreadcrumbItem>
-                    <BreadcrumbPage>Dashboard</BreadcrumbPage>
-                  </BreadcrumbItem>
+                  <BreadcrumbPagePathname />
                 </BreadcrumbList>
               </Breadcrumb>
             </div>
