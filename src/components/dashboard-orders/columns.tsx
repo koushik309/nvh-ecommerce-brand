@@ -72,7 +72,65 @@ export const columns: ColumnDef<Order>[] = [
       );
     },
   },
-
+  {
+    accessorKey: "price",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Price" />
+    ),
+    cell: ({ row }) => {
+      const price = parseFloat(row.getValue("price"));
+      const formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(price);
+      return <div className="font-medium">{formatted}</div>;
+    },
+  },
+  {
+    id: "customer",
+    accessorFn: (row) => row.Customer.name,
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Customer" />
+    ),
+    cell: ({ row }) => {
+      const customer = row.original.Customer;
+      return (
+        <div className="flex flex-col">
+          <span className="font-medium">{customer.name}</span>
+          <span className="text-sm text-muted-foreground">
+            {customer.email}
+          </span>
+        </div>
+      );
+    },
+  },
+  {
+    accessorKey: "date",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Date" />
+    ),
+    cell: ({ row }) => {
+      const date = new Date(row.getValue("date"));
+      return <div>{date.toLocaleDateString()}</div>;
+    },
+  },
+  {
+    accessorKey: "type",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Order Type" />
+    ),
+    cell: ({ row }) => {
+      const type = row.original.type;
+      return (
+        <div className="flex w-[100px] items-center">
+          <span className="capitalize">{type}</span>
+        </div>
+      );
+    },
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id));
+    },
+  },
   {
     accessorKey: "status",
     header: ({ column }) => (
