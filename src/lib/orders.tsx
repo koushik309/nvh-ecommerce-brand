@@ -5,10 +5,10 @@ export const order = [
       name: "Silken Touch",
       image: "/1.jpg",
     },
-    price: 159,
+    price: 338,
     Customer: {
-      name: "Sophia Patel",
-      email: "sophia.patel@gmail.com",
+      name: "Alexandra Chen",
+      email: "alexandra.chen@gmail.com",
     },
     date: "Jun 23, 2023",
     type: "Sale",

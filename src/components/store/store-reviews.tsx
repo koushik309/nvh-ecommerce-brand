@@ -8,6 +8,7 @@ import {
   Heart,
   BadgeCheck,
 } from "lucide-react";
+import Image from "next/image";
 
 const ReviewSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -131,7 +132,9 @@ const ReviewSection = () => {
 
               <div className="pt-6">
                 <div className="flex items-center justify-center gap-4">
-                  <img
+                  <Image
+                    width={550}
+                    height={550}
                     src={reviews[activeIndex].image}
                     alt={reviews[activeIndex].name}
                     className="w-16 h-16 rounded-full object-cover"

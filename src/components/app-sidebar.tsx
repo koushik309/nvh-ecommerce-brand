@@ -9,6 +9,7 @@ import {
   LogOut,
   Blocks,
   BellDot,
+  SquareArrowOutUpRight,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
@@ -22,12 +23,13 @@ import {
   SidebarMenuButton,
 } from "@/components/ui/sidebar";
 import { LogoutConfirmationDialog } from "./dialog-logout-confirmation";
+import Link from "next/link";
 
 const data = {
   user: {
     name: "Nzar",
     email: "admin@nvh.com",
-    avatar: "/nzar.jpg",
+    avatar: "https://avatars.githubusercontent.com/u/98880087",
   },
   navMain: [
     {
@@ -64,7 +66,9 @@ const data = {
   ],
 };
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+type SidebarProps = React.ComponentProps<typeof Sidebar>;
+
+export function AppSidebar(props: SidebarProps) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -74,6 +78,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
+        <Link target="_blank" rel="noopener noreferrer" href="/">
+          <SidebarMenuButton
+            tooltip="Preview Store"
+            className="hover:bg-white/10 transition-colors duration-200"
+          >
+            <SquareArrowOutUpRight />
+            <span>Preview Store</span>
+          </SidebarMenuButton>
+        </Link>
         <LogoutConfirmationDialog>
           <SidebarMenuButton
             tooltip="Log out"

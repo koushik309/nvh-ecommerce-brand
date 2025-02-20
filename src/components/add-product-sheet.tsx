@@ -152,7 +152,7 @@ export function AddProductSheet({ onAddProduct }: AddProductSheetProps) {
       // Create a placeholder image URL if no image is uploaded
       const imageUrl = formData.image
         ? URL.createObjectURL(formData.image)
-        : "/api/placeholder/100/100";
+        : "https://placehold.co/100x100";
 
       const newProduct = {
         id: Date.now(),
@@ -191,6 +191,7 @@ export function AddProductSheet({ onAddProduct }: AddProductSheetProps) {
         title: "Error",
         description: "Failed to add product. Please try again.",
       });
+      console.log(error);
     } finally {
       setIsSubmitting(false);
     }

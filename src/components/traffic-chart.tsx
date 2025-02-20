@@ -35,7 +35,10 @@ export function RecentSales() {
   return (
     <div className="space-y-8">
       {salesData.map(({ name, email, amount }) => (
-        <div className="flex flex-1 flex-wrap items-center justify-between">
+        <div
+          key={email}
+          className="flex flex-1 flex-wrap items-center justify-between"
+        >
           <div className="space-y-1">
             <p className="text-sm font-medium leading-none">{name}</p>
             <p className="text-sm text-muted-foreground">{email}</p>

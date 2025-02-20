@@ -3,6 +3,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "@/components/ui/checkbox";
 import { DataTableColumnHeader } from "@/components/dashboard-orders/data-table-column-header";
 import { DataTableRowActions } from "@/components/dashboard-orders/data-table-row-actions";
+import Image from "next/image";
 
 type Order = {
   id: string;
@@ -62,7 +63,9 @@ export const columns: ColumnDef<Order>[] = [
       const product = row.original.product;
       return (
         <div className="flex items-center space-x-2">
-          <img
+          <Image
+            width={1070}
+            height={1070}
             src={product.image}
             alt={product.name}
             className="h-8 w-8 rounded object-cover"

@@ -38,6 +38,7 @@ import {
 } from "@/components/ui/collapsible";
 import { products as productsData } from "@/lib/app-data";
 import AddProductSheet from "@/components/add-product-sheet";
+import Image from "next/image";
 
 type Product = {
   id: number;
@@ -99,7 +100,9 @@ const ProductsPage = () => {
       <CollapsibleTrigger className="w-full">
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center gap-3">
-            <img
+            <Image
+              width={1070}
+              height={1070}
               src={product.image}
               alt={product.name}
               className="h-10 w-10 rounded-lg object-cover"
@@ -232,7 +235,9 @@ const ProductsPage = () => {
                   <TableRow key={product.id}>
                     <TableCell>
                       <div className="flex items-center gap-3">
-                        <img
+                        <Image
+                          width={1070}
+                          height={1070}
                           src={product.image}
                           alt={product.name}
                           className="h-10 w-10 rounded-lg object-cover"

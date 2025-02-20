@@ -19,7 +19,7 @@ export function ForgotPasswordDialog({
         <DialogHeader>
           <DialogTitle>Password Reset</DialogTitle>
           <DialogDescription>
-            We've sent a password reset link to your email address.
+            We&apos;ve sent a password reset link to your email address.
           </DialogDescription>
         </DialogHeader>
         <div className="py-4">
@@ -28,8 +28,8 @@ export function ForgotPasswordDialog({
             your password.
           </p>
           <p className="mt-2">
-            If you don't receive the email within a few minutes, please check
-            your spam folder.
+            If you don&apos;t receive the email within a few minutes, please
+            check your spam folder.
           </p>
         </div>
       </DialogContent>
