@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 export default function ProductsCard({
   price,
@@ -8,7 +8,7 @@ export default function ProductsCard({
   name,
 }: {
   price: number;
-  image: StaticImageData;
+  image: string;
   category: string;
   name: string;
 }) {
