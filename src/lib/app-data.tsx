@@ -1,9 +1,3 @@
-import i1 from "../../public/1.jpg";
-import i2 from "../../public/2.jpg";
-import i3 from "../../public/3.jpg";
-import i4 from "../../public/4.jpg";
-import i5 from "../../public/5.jpg";
-import i6 from "../../public/6.jpg";
 export const products = [
   {
     id: 1,
@@ -14,7 +8,7 @@ export const products = [
     category: "Serum",
     price: 169,
     stock: 1120,
-    image: i3,
+    image: "/3.jpg",
     rating: 4.8,
     tags: ["Glow", "Anti-Aging", "Hydrating"],
   },
@@ -27,7 +21,7 @@ export const products = [
     category: "Moisturizer",
     price: 159,
     stock: 185,
-    image: i2,
+    image: "/2.jpg",
     rating: 4.7,
     tags: ["Hydrating", "Nourishing"],
   },
@@ -40,7 +34,7 @@ export const products = [
     category: "Cleanser",
     price: 139,
     stock: 1150,
-    image: i1,
+    image: "/1.jpg",
     rating: 4.6,
     tags: ["Gentle", "Makeup Remover", "Hydrating"],
   },
@@ -53,7 +47,7 @@ export const products = [
     category: "Eye Care",
     price: 249,
     stock: 1100,
-    image: i4,
+    image: "/4.jpg",
     rating: 4.9,
     tags: ["Anti-Aging", "Brightening", "Soothing"],
   },
@@ -66,7 +60,7 @@ export const products = [
     category: "Night Care",
     price: 379,
     stock: 170,
-    image: i6,
+    image: "/6.jpg",
     rating: 4.7,
     tags: ["Repairing", "Hydrating", "Anti-Aging"],
   },
@@ -79,7 +73,7 @@ export const products = [
     category: "Sunscreen",
     price: 134,
     stock: 2100,
-    image: i5,
+    image: "/5.jpg",
     rating: 4.5,
     tags: ["Sun Protection", "Lightweight", "Non-Greasy"],
   },
