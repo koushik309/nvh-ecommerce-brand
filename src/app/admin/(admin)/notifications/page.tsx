@@ -4,13 +4,11 @@ import {
   Package,
   Star,
   AlertCircle,
-  User,
   Check,
   DollarSign,
   MessageSquare,
   RefreshCcw,
   Truck,
-  ArrowDown,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import React from "react";
