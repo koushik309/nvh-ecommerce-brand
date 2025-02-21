@@ -197,6 +197,35 @@ const NotificationsPage = () => {
           Mark all as read
         </button>
       </div>
+
+      <div className="space-y-2">
+        {notifications.map((notification) => (
+          <div
+            key={notification.id}
+            className={`flex items-start gap-3 p-3 rounded-lg border ${
+              !notification.read ? "bg-muted/40" : ""
+            }`}
+          >
+            <div className="text-muted-foreground mt-1">
+              {getIcon(notification.type)}
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm text-foreground">{notification.message}</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                {formatTimeAgo(notification.timestamp)}
+              </p>
+            </div>
+            {!notification.read && (
+              <button
+                onClick={() => markAsRead(notification.id)}
+                className="text-blue-500 hover:text-blue-700"
+              >
+                <Check className="h-4 w-4" />
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
