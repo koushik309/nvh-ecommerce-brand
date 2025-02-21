@@ -190,7 +190,7 @@ const SettingsPage = () => {
             <CardHeader>
               <CardTitle>Shipping Settings</CardTitle>
               <CardDescription>
-                Configure your store's shipping options
+                Configure your store&apos;s shipping options
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -300,6 +300,67 @@ const SettingsPage = () => {
                 Add Shipping Zone
               </Button>
             </CardFooter>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="security" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Security Settings</CardTitle>
+              <CardDescription>
+                Manage your security preferences and authentication settings
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="space-y-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="currentPassword">Current Password</Label>
+                  <Input id="currentPassword" type="password" />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="newPassword">New Password</Label>
+                  <Input id="newPassword" type="password" />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="confirmPassword">Confirm New Password</Label>
+                  <Input id="confirmPassword" type="password" />
+                </div>
+              </div>
+
+              <Separator />
+
+              <div className="space-y-4">
+                <h4 className="text-sm font-medium">
+                  Two-Factor Authentication
+                </h4>
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <Label>Enable 2FA</Label>
+                    <p className="text-sm text-muted-foreground">
+                      Add an extra layer of security to your account
+                    </p>
+                  </div>
+                  <Switch defaultChecked />
+                </div>
+              </div>
+
+              <Separator />
+
+              <div className="space-y-4">
+                <h4 className="text-sm font-medium">API Access</h4>
+                <div className="grid gap-4">
+                  <div className="flex items-center justify-between p-4 border rounded-lg">
+                    <div className="space-y-0.5">
+                      <div className="text-sm font-medium">API Key</div>
+                      <div className="text-sm text-muted-foreground">
+                        ••••••••••••••••
+                      </div>
+                    </div>
+                    <Button variant="outline">Regenerate</Button>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
           </Card>
         </TabsContent>
       </Tabs>
