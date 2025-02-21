@@ -6,9 +6,11 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
@@ -19,7 +21,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
+import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Textarea } from "@/components/ui/textarea";
 
 type StoreSettings = {
@@ -31,6 +34,12 @@ type StoreSettings = {
   language: string;
 };
 
+type ShippingSettings = {
+  freeShippingThreshold: number;
+  internationalShipping: boolean;
+  expressDelivery: boolean;
+};
+
 const SettingsPage = () => {
   const [storeSettings, setStoreSettings] = React.useState<StoreSettings>({
     storeName: "NVH®",
@@ -39,6 +48,12 @@ const SettingsPage = () => {
     timezone: "UTC-5",
     currency: "USD",
     language: "English",
+  });
+
+  const [shipping, setShipping] = React.useState<ShippingSettings>({
+    freeShippingThreshold: 150,
+    internationalShipping: true,
+    expressDelivery: true,
   });
 
   const handleSave = () => {
@@ -167,6 +182,124 @@ const SettingsPage = () => {
                 </div>
               </div>
             </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="shipping" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Shipping Settings</CardTitle>
+              <CardDescription>
+                Configure your store's shipping options
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="space-y-4">
+                <div className="grid gap-2">
+                  <Label>Free Shipping Threshold</Label>
+                  <div className="flex gap-2">
+                    <Select defaultValue="USD">
+                      <SelectTrigger className="w-24">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="USD">USD</SelectItem>
+                        <SelectItem value="EUR">EUR</SelectItem>
+                        <SelectItem value="GBP">GBP</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <Input
+                      type="number"
+                      value={shipping.freeShippingThreshold}
+                      onChange={(e) =>
+                        setShipping({
+                          ...shipping,
+                          freeShippingThreshold: parseInt(e.target.value),
+                        })
+                      }
+                    />
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <Label>International Shipping</Label>
+                    <p className="text-sm text-muted-foreground">
+                      Enable shipping to international addresses
+                    </p>
+                  </div>
+                  <Switch
+                    checked={shipping.internationalShipping}
+                    onCheckedChange={(checked) =>
+                      setShipping({
+                        ...shipping,
+                        internationalShipping: checked,
+                      })
+                    }
+                  />
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <Label>Express Delivery</Label>
+                    <p className="text-sm text-muted-foreground">
+                      Offer express shipping options
+                    </p>
+                  </div>
+                  <Switch
+                    checked={shipping.expressDelivery}
+                    onCheckedChange={(checked) =>
+                      setShipping({
+                        ...shipping,
+                        expressDelivery: checked,
+                      })
+                    }
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Shipping Zones</CardTitle>
+              <CardDescription>
+                Set up shipping rates for different regions
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Alert>
+                <AlertDescription>
+                  Configure shipping zones to set different rates and rules for
+                  specific regions.
+                </AlertDescription>
+              </Alert>
+              <div className="mt-4 space-y-4">
+                <div className="flex items-center justify-between p-4 border rounded-lg">
+                  <div>
+                    <h4 className="font-medium">North America</h4>
+                    <p className="text-sm text-muted-foreground">
+                      United States, Canada
+                    </p>
+                  </div>
+                  <Badge>Active</Badge>
+                </div>
+                <div className="flex items-center justify-between p-4 border rounded-lg">
+                  <div>
+                    <h4 className="font-medium">Europe</h4>
+                    <p className="text-sm text-muted-foreground">
+                      EU Countries
+                    </p>
+                  </div>
+                  <Badge variant="outline">Draft</Badge>
+                </div>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Button disabled variant="outline" className="w-full">
+                Add Shipping Zone
+              </Button>
+            </CardFooter>
           </Card>
         </TabsContent>
       </Tabs>
