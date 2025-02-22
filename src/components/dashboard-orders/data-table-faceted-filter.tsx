@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  Command,
+  Command as CommandPrimitive,
   CommandEmpty,
   CommandGroup,
   CommandInput,
@@ -83,7 +83,7 @@ export function DataTableFacetedFilter<TData, TValue>({
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0" align="start">
-        <Command shouldFilter={false}>
+        <CommandPrimitive>
           <CommandInput placeholder={title} />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
@@ -142,7 +142,7 @@ export function DataTableFacetedFilter<TData, TValue>({
               </>
             )}
           </CommandList>
-        </Command>
+        </CommandPrimitive>
       </PopoverContent>
     </Popover>
   );

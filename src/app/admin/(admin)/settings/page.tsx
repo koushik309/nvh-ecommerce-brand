@@ -25,6 +25,20 @@ import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Textarea } from "@/components/ui/textarea";
 
+type NotificationSettings = {
+  orderNotifications: boolean;
+  stockAlerts: boolean;
+  customerMessages: boolean;
+  marketingUpdates: boolean;
+  reviewNotifications: boolean;
+  orderAlerts: boolean;
+  shippingAlerts: boolean;
+  restockAlerts: boolean;
+  messageAlerts: boolean;
+  refundAlerts: boolean;
+  reviewAlerts: boolean;
+};
+
 type StoreSettings = {
   storeName: string;
   storeUrl: string;
@@ -41,6 +55,21 @@ type ShippingSettings = {
 };
 
 const SettingsPage = () => {
+  const [notifications, setNotifications] =
+    React.useState<NotificationSettings>({
+      orderNotifications: true,
+      orderAlerts: true,
+      stockAlerts: true,
+      customerMessages: true,
+      marketingUpdates: false,
+      reviewNotifications: true,
+      shippingAlerts: true,
+      restockAlerts: true,
+      messageAlerts: true,
+      refundAlerts: true,
+      reviewAlerts: true,
+    });
+
   const [storeSettings, setStoreSettings] = React.useState<StoreSettings>({
     storeName: "NVH®",
     storeUrl: "nvh.nzar.dev",
@@ -178,6 +207,212 @@ const SettingsPage = () => {
                   <div className="grid gap-2">
                     <Label>Registration Number</Label>
                     <Input placeholder="Enter registration number" />
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="notifications" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Notification Preferences</CardTitle>
+              <CardDescription>
+                Choose what notifications you want to receive
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-4">
+                {/* Order Alerts */}
+                <Separator />
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <Label>Order Alerts</Label>
+                    <p className="text-sm text-muted-foreground">
+                      Receive updates when new orders are placed
+                    </p>
+                  </div>
+                  <Switch
+                    checked={notifications.orderAlerts}
+                    onCheckedChange={(checked) =>
+                      setNotifications({
+                        ...notifications,
+                        orderAlerts: checked,
+                      })
+                    }
+                  />
+                </div>
+
+                {/* Review Alerts */}
+                <Separator />
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <Label>Review Alerts</Label>
+                    <p className="text-sm text-muted-foreground">
+                      Get notified when customers leave reviews
+                    </p>
+                  </div>
+                  <Switch
+                    checked={notifications.reviewAlerts}
+                    onCheckedChange={(checked) =>
+                      setNotifications({
+                        ...notifications,
+                        reviewAlerts: checked,
+                      })
+                    }
+                  />
+                </div>
+
+                {/* Stock Alerts */}
+                <Separator />
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <Label>Stock Alerts</Label>
+                    <p className="text-sm text-muted-foreground">
+                      Get notified when products are low in stock
+                    </p>
+                  </div>
+                  <Switch
+                    checked={notifications.stockAlerts}
+                    onCheckedChange={(checked) =>
+                      setNotifications({
+                        ...notifications,
+                        stockAlerts: checked,
+                      })
+                    }
+                  />
+                </div>
+
+                {/* Refund Alerts */}
+                <Separator />
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <Label>Refund Alerts</Label>
+                    <p className="text-sm text-muted-foreground">
+                      Get updates when refunds are processed
+                    </p>
+                  </div>
+                  <Switch
+                    checked={notifications.refundAlerts}
+                    onCheckedChange={(checked) =>
+                      setNotifications({
+                        ...notifications,
+                        refundAlerts: checked,
+                      })
+                    }
+                  />
+                </div>
+
+                {/* Message Alerts */}
+                <Separator />
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <Label>Message Alerts</Label>
+                    <p className="text-sm text-muted-foreground">
+                      Receive notifications when customers send messages
+                    </p>
+                  </div>
+                  <Switch
+                    checked={notifications.messageAlerts}
+                    onCheckedChange={(checked) =>
+                      setNotifications({
+                        ...notifications,
+                        messageAlerts: checked,
+                      })
+                    }
+                  />
+                </div>
+
+                {/* Restock Alerts */}
+                <Separator />
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <Label>Restock Alerts</Label>
+                    <p className="text-sm text-muted-foreground">
+                      Be notified when products are restocked
+                    </p>
+                  </div>
+                  <Switch
+                    checked={notifications.restockAlerts}
+                    onCheckedChange={(checked) =>
+                      setNotifications({
+                        ...notifications,
+                        restockAlerts: checked,
+                      })
+                    }
+                  />
+                </div>
+
+                {/* Shipping Alerts */}
+                <Separator />
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <Label>Shipping Alerts</Label>
+                    <p className="text-sm text-muted-foreground">
+                      Get updates on shipping status and tracking information
+                    </p>
+                  </div>
+                  <Switch
+                    checked={notifications.shippingAlerts}
+                    onCheckedChange={(checked) =>
+                      setNotifications({
+                        ...notifications,
+                        shippingAlerts: checked,
+                      })
+                    }
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Email Templates</CardTitle>
+              <CardDescription>
+                Customize your automated email notifications
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="grid gap-4">
+                  <div className="flex items-center justify-between p-4 border rounded-lg">
+                    <div className="space-y-0.5">
+                      <div className="text-sm font-medium">
+                        Order Confirmation
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        Sent when a customer completes their order
+                      </div>
+                    </div>
+                    <Button disabled variant="outline">
+                      Edit Template
+                    </Button>
+                  </div>
+                  <div className="flex items-center justify-between p-4 border rounded-lg">
+                    <div className="space-y-0.5">
+                      <div className="text-sm font-medium">
+                        Shipping Confirmation
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        Sent when an order ships
+                      </div>
+                    </div>
+                    <Button disabled variant="outline">
+                      Edit Template
+                    </Button>
+                  </div>
+                  <div className="flex items-center justify-between p-4 border rounded-lg">
+                    <div className="space-y-0.5">
+                      <div className="text-sm font-medium">Abandoned Cart</div>
+                      <div className="text-sm text-muted-foreground">
+                        Sent to customers who leave items in cart
+                      </div>
+                    </div>
+                    <Button disabled variant="outline">
+                      Edit Template
+                    </Button>
                   </div>
                 </div>
               </div>
