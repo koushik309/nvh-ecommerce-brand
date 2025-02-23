@@ -10,6 +10,7 @@ import {
   Blocks,
   BellDot,
   SquareArrowOutUpRight,
+  Mail,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
@@ -49,6 +50,11 @@ const data = {
       icon: Package,
     },
     {
+      title: "Emails",
+      url: "/emails",
+      icon: Mail,
+    },
+    {
       title: "Integrations",
       url: "/integrations",
       icon: Blocks,
@@ -81,7 +87,7 @@ export function AppSidebar(props: SidebarProps) {
         <Link target="_blank" rel="noopener noreferrer" href="/">
           <SidebarMenuButton
             tooltip="Preview Store"
-            className="hover:bg-white/10 transition-colors duration-200"
+            className="hover:bg-black/5 dark:hover:bg-white/10 transition-colors duration-200"
           >
             <SquareArrowOutUpRight />
             <span>Preview Store</span>
@@ -90,7 +96,7 @@ export function AppSidebar(props: SidebarProps) {
         <LogoutConfirmationDialog>
           <SidebarMenuButton
             tooltip="Log out"
-            className="hover:bg-white/10 transition-colors duration-200"
+            className="hover:bg-black/5 dark:hover:bg-white/10 transition-colors duration-200"
           >
             <LogOut />
             <span>Log out</span>

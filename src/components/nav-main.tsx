@@ -29,7 +29,7 @@ export function NavMain({
             <Link href={`/admin/${item.url}`}>
               <SidebarMenuButton
                 tooltip={item.title}
-                className="hover:bg-white/10 transition-colors duration-200"
+                className="hover:bg-black/5 dark:hover:bg-white/10 transition-colors duration-200"
               >
                 {item.icon && <item.icon />}
                 <span>{item.title}</span>
