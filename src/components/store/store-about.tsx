@@ -9,15 +9,15 @@ export default function About() {
       className="py-12 sm:py-24 max-w-screen-lg mx-auto px-4"
     >
       <div className="text-center mb-10 sm:mb-16">
-        <h2 className="text-3xl sm:text-5xl font-light text-white mb-3">
+        <h2 className="text-3xl sm:text-5xl font-light text-foreground mb-3">
           About The Brand
         </h2>
-        <p className="sm:text-lg text-white/60">
+        <p className="sm:text-lg text-foreground/60">
           Redefining Luxury Skincare Since 2021
         </p>
       </div>
 
-      <div className="w-full gap-6 flex flex-col items-center justify-center py-12 px-8 bg-[#F8F8F8] rounded-2xl shadow-sm">
+      <div className="w-full gap-6 flex flex-col items-center justify-center py-12 px-8 bg-muted dark:bg-[#F8F8F8] rounded-2xl shadow-sm">
         <Image src={nvh} alt="NVH Logo" className="h-10 w-auto mb-2" />
         <p className="text-center text-lg text-neutral-800 max-w-[600px] leading-relaxed">
           Born from the fusion of nature&apos;s finest ingredients and

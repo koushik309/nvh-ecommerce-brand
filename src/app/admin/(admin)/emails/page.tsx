@@ -118,7 +118,7 @@ const SubscribersDashboard = () => {
       </div>
 
       <Card>
-        <CardHeader className="px-0 md:flex-row justify-between gap-2 md:items-end">
+        <CardHeader className="px-0 md:flex-row justify-between gap-2 items-center">
           <CardTitle>Recent Subscribers</CardTitle>
           <div className="flex gap-3">
             <Button disabled variant="secondary" className="w-full md:w-max">
@@ -259,7 +259,7 @@ const SubscribersDashboard = () => {
                         variant={
                           subscriber.status === "active"
                             ? "default"
-                            : "destructive"
+                            : "secondary"
                         }
                         className="text-xs"
                       >
