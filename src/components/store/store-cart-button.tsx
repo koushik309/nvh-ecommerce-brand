@@ -30,8 +30,8 @@ export function CardButton() {
       <SheetTrigger asChild>
         <button className="relative group p-1">
           <ShoppingBag strokeWidth={1} />
-          <p className="absolute size-4 rounded-xl flex justify-center items-center bg-white right-0 top-1 group-hover:size-8 transition-all duration-300">
-            <span className="text-xs group-hover:text-lg text-black transition-all duration-300">
+          <p className="absolute size-4 rounded-xl flex justify-center items-center bg-foreground right-0 top-1 group-hover:size-8 transition-all duration-300">
+            <span className="text-xs group-hover:text-lg text-background transition-all duration-300">
               {cart.length}
             </span>
           </p>
@@ -82,7 +82,7 @@ export function CardButton() {
                       <div className="flex justify-between gap-2 mt-1 w-full items-center">
                         <div className="flex items-center border border-white/40 rounded-xl px-2 py-0.5">
                           <button
-                            className="text-white/60 hover:text-white"
+                            className="text-foreground/60 hover:text-foreground"
                             onClick={() =>
                               updateItemQuantity(product.id, item.items - 1)
                             }
@@ -105,7 +105,7 @@ export function CardButton() {
                           />
 
                           <button
-                            className="text-white/60 hover:text-white"
+                            className="text-foreground/60 hover:text-foreground"
                             onClick={() =>
                               updateItemQuantity(product.id, item.items + 1)
                             }
@@ -121,7 +121,7 @@ export function CardButton() {
             </div>
 
             <div className="mt-auto border-t-2 py-4 w-full flex flex-col gap-4 items-center justify-between">
-              <p className="flex justify-between w-full text-lg text-white/80">
+              <p className="flex justify-between w-full text-lg text-foreground/80">
                 <span>Subtotal:</span>
                 <span>${subtotal.toFixed(2)} USD</span>
               </p>

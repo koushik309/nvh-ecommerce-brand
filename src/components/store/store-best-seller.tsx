@@ -14,14 +14,14 @@ export default function BestSeller() {
       className="py-12 sm:py-24 max-w-screen-lg mx-auto px-4"
     >
       <div className="text-center mb-16">
-        <h2 className="text-3xl sm:text-5xl font-light text-white mb-3">
+        <h2 className="text-3xl sm:text-5xl font-light text-foreground mb-3">
           Client Favorites
         </h2>
-        <p className="sm:text-lg text-white/60">
+        <p className="sm:text-lg text-foreground/60">
           Our signature formulations that have earned global recognition
         </p>
       </div>
-      <div className="w-full relative flex flex-col md:flex-row gap-10 items-center justify-center md:h-64 bg-[#F8F8F8] rounded-xl p-2">
+      <div className="w-full relative flex flex-col md:flex-row gap-10 items-center justify-center md:h-64 bg-muted dark:bg-[#F8F8F8] rounded-xl p-2">
         <Image
           src="/best.png"
           alt="Eternal Youth Serum"
@@ -44,7 +44,7 @@ export default function BestSeller() {
                 addToCart(1);
                 setClick(false);
               }}
-              className="py-2.5 w-full flex items-center justify-center gap-2 hover:bg-black/80 transition-colors duration-300 px-8 bg-black rounded-lg font-medium"
+              className="py-2.5 w-full text-white flex items-center justify-center gap-2 hover:bg-black/80 transition-colors duration-300 px-8 bg-black rounded-lg font-medium"
             >
               {click ? (
                 <>
