@@ -9,10 +9,10 @@ export default function Products() {
       className="py-12 sm:py-24 max-w-screen-md mx-auto"
     >
       <div className="text-center mb-10 sm:mb-16">
-        <h2 className="text-3xl sm:text-5xl font-light text-white mb-3">
+        <h2 className="text-3xl sm:text-5xl font-light text-foreground mb-3">
           Our Collection
         </h2>
-        <p className="sm:text-lg text-white/60">
+        <p className="sm:text-lg text-foreground/60">
           Each product is a masterpiece of luxury skincare innovation
         </p>
       </div>

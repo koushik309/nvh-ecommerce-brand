@@ -85,15 +85,15 @@ export default function InfiniteScroll() {
   return (
     <section className="py-12 sm:py-24 px-4 w-full">
       <div className="text-center mb-10 sm:mb-16">
-        <h2 className="text-3xl sm:text-5xl font-light text-white mb-3">
+        <h2 className="text-3xl sm:text-5xl font-light text-foreground mb-3">
           Pure & Precious Oils
         </h2>
-        <p className="sm:text-lg text-white/60">
+        <p className="sm:text-lg text-foreground/60">
           Ethically sourced rare oils, carefully selected for their
           extraordinary benefits
         </p>
       </div>
-      <div className="bg-[#F8F8F8] h-52 w-full flex items-center overflow-hidden relative">
+      <div className="bg-muted dark:bg-[#F8F8F8] h-52 w-full flex items-center overflow-hidden relative">
         <div className="animate-scroll flex items-center absolute whitespace-nowrap">
           {items}
           {items}

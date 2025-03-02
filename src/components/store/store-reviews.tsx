@@ -63,32 +63,32 @@ const ReviewSection = () => {
       className="py-12 sm:py-24 max-w-screen-lg mx-auto px-4"
     >
       <div className="text-center mb-10 sm:mb-16">
-        <h2 className="text-3xl sm:text-5xl font-light text-white mb-3">
+        <h2 className="text-3xl sm:text-5xl font-light text-foreground mb-3">
           Why NVH®
         </h2>
-        <p className="sm:text-lg text-white/60">
+        <p className="sm:text-lg text-foreground/60">
           Discover why leading beauty experts and enthusiasts choose NVH®
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-8 max-w-4xl mx-auto">
-        <div className="text-center px-8 py-4 bg-white rounded-xl">
+        <div className="text-center px-8 py-4 bg-muted dark:bg-white rounded-xl">
           <h3 className="text-4xl font-light text-neutral-800 flex gap-2 items-center justify-center">
             <Star className="size-8 fill-yellow-400 text-yellow-400" /> 4.7
           </h3>
           <p className="text-neutral-600">Average Rating</p>
         </div>
-        <div className="text-center px-8 py-4 bg-white rounded-xl">
+        <div className="text-center px-8 py-4 bg-muted dark:bg-white rounded-xl">
           <h3 className="text-4xl font-light text-neutral-800 flex gap-2 items-center justify-center">
             <BadgeCheck
-              className="size-9 fill-blue-400 text-white"
+              className="size-9 fill-blue-400 text-foreground"
               strokeWidth={1}
             />
             3,218+
           </h3>
           <p className="text-neutral-600">Trusted Customers</p>
         </div>
-        <div className="text-center px-8 py-4 bg-white rounded-xl">
+        <div className="text-center px-8 py-4 bg-muted dark:bg-white rounded-xl">
           <h3 className="text-4xl font-light text-neutral-800 flex gap-2 items-center justify-center">
             <Heart className="size-8 fill-red-400 text-red-400" /> 97%
           </h3>
@@ -97,17 +97,17 @@ const ReviewSection = () => {
       </div>
 
       <div className="text-center mt-20 mb-12">
-        <h2 className="text-2xl sm:text-4xl font-light text-white mb-3">
+        <h2 className="text-2xl sm:text-4xl font-light text-foreground mb-3">
           Experts Love NVH®
         </h2>
-        <p className="sm:text-lg text-white/60">
+        <p className="sm:text-lg text-foreground/60">
           Trusted reviews from the foremost names in the domain.
         </p>
       </div>
 
       <div className="relative">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-2xl p-12 shadow-sm">
+          <div className="bg-muted dark:bg-white rounded-2xl p-12 shadow-sm">
             <div className="flex justify-center mb-8">
               <Quote className="w-12 h-12 text-neutral-200" />
             </div>
@@ -160,13 +160,13 @@ const ReviewSection = () => {
 
         <button
           onClick={prevReview}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 bg-white w-12 h-12 rounded-full shadow-md flex items-center justify-center hover:bg-neutral-50 transition-colors"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 bg-muted dark:bg-white w-12 h-12 rounded-full border border-muted-foreground flex items-center justify-center hover:bg-neutral-50 transition-colors"
         >
           <ChevronLeft className="w-6 h-6 text-neutral-600" />
         </button>
         <button
           onClick={nextReview}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 bg-white w-12 h-12 rounded-full shadow-md flex items-center justify-center hover:bg-neutral-50 transition-colors"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 bg-muted dark:bg-white w-12 h-12 rounded-full border border-muted-foreground flex items-center justify-center hover:bg-neutral-50 transition-colors"
         >
           <ChevronRight className="w-6 h-6 text-neutral-600" />
         </button>

@@ -53,7 +53,7 @@ export default function Header({ products }: { products?: boolean }) {
         <div
           className={`${
             !openMenu && "-translate-y-[100%]"
-          } absolute md:hidden bg-neutral-950 z-20 inset-0 border-b flex flex-col justify-center items-center w-full p-4 pt-8 h-min transition-transform duration-300`}
+          } absolute md:hidden bg-background z-20 inset-0 border-b flex flex-col justify-center items-center w-full p-4 pt-8 h-min transition-transform duration-300`}
         >
           <h1 className="text-center text-4xl sm:text-6xl font-bold uppercase mb-12">
             NZAR Velvet Hour
