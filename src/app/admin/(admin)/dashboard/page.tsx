@@ -1,5 +1,7 @@
 import { SalesChart } from "@/components/sales-chart";
 import { RecentSales } from "@/components/traffic-chart";
+import { CustomerValueChart } from "@/components/customer-age-chart.tsx";
+import { ProductPerformanceChart } from "@/components/product-performance-chart";
 import { Activity, CreditCard, DollarSign, ShoppingCart } from "lucide-react";
 import {
   Card,
@@ -90,6 +92,31 @@ export default function Dashboard() {
               </CardHeader>
               <CardContent>
                 <RecentSales />
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-7">
+            <Card className="col-span-1 lg:col-span-3 bg-muted/10 border">
+              <CardHeader>
+                <CardTitle>Customer Value Analysis</CardTitle>
+                <CardDescription>
+                  Customer lifetime value vs. acquisition cost ratio: 5.2x
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <CustomerValueChart />
+              </CardContent>
+            </Card>
+            <Card className="col-span-1 lg:col-span-4 bg-muted/10 border">
+              <CardHeader>
+                <CardTitle>Product Performance</CardTitle>
+                <CardDescription>
+                  Top 5 products by revenue and growth rate
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pl-2">
+                <ProductPerformanceChart />
               </CardContent>
             </Card>
           </div>
