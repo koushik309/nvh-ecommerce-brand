@@ -5,7 +5,6 @@ import {
   BarChart,
   Legend,
   ResponsiveContainer,
-  Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
@@ -48,6 +47,41 @@ export function ProductPerformanceChart() {
           color: "hsl(var(--primary))",
         },
       }}
-    ></ChartContainer>
+    >
+      <ResponsiveContainer width="100%" height={350}>
+        <BarChart
+          data={data}
+          layout="vertical"
+          margin={{ left: 20, bottom: 20, top: 20, right: 20 }}
+        >
+          <XAxis
+            type="number"
+            stroke="#888888"
+            fontSize={12}
+            tickLine={false}
+            axisLine={false}
+            tickFormatter={(value) => `$${value / 1000}k`}
+          />
+          <YAxis
+            type="category"
+            dataKey="name"
+            stroke="#888888"
+            fontSize={12}
+            tickLine={false}
+            axisLine={false}
+            width={100}
+          />
+          <ChartTooltip content={<ChartTooltipContent />} cursor={false} />
+          <Legend />
+          <Bar
+            dataKey="revenue"
+            name="Revenue"
+            fill="currentColor"
+            className="fill-primary"
+            radius={[0, 4, 4, 0]}
+          ></Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </ChartContainer>
   );
 }
