@@ -23,6 +23,7 @@ jobs:
             echo "is-pr=true" >> $GITHUB_OUTPUT
           else
             echo "is-pr=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Set version
         id: version
