@@ -1,0 +1,32 @@
+name: 🧭 Determine Version
+on:
+  workflow_call:
+    outputs:
+      release-version:
+        description: "Release version"
+        value: ${{ jobs.version.outputs.release-version }}
+      is-pr:
+        description: "Is pull request"
+        value: ${{ jobs.version.outputs.is-pr }}
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      release-version: ${{ steps.version.outputs.release-version }}
+      is-pr: ${{ steps.check.outputs.is-pr }}
+    steps:
+      - name: Determine event type
+        id: check
+        run: |
+          echo "is-pr=${{ github.event_name == 'pull_request' }}" >> $GITHUB_OUTPUT
+
+      - name: Set version
+        id: version
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "release-version=pr-${{ github.event.number }}-${{ github.sha }}" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event_name }}" == "push" ]]; then
+            echo "release-version=sha-${{ github.sha }}" >> $GITHUB_OUTPUT
+          else
+            echo "release-version=${{ inputs.release-version }}" >> $GITHUB_OUTPUT

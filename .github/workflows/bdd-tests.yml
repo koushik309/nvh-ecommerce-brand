@@ -1,0 +1,30 @@
+name: 🥒 BDD Tests
+on:
+  workflow_call:
+
+jobs:
+  bdd:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [chrome, firefox]
+        viewport: [desktop, mobile]
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker-compose -f docker-compose.test.yml up -d
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+      - run: gem install cucumber
+      - run: |
+          cucumber BROWSER=${{ matrix.browser }} VIEWPORT=${{ matrix.viewport }} \
+            --format json --out reports/cucumber.json
+        env:
+          APP_URL: http://localhost:3000
+      - uses: bcgov/github-action-cucumber-report@v1
+        with:
+          json-dir: reports
+      - uses: actions/upload-artifact@v3
+        with:
+          name: cucumber-report-${{ matrix.browser }}-${{ matrix.viewport }}
+          path: cucumber-report.html

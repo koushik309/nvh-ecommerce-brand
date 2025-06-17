@@ -1,0 +1,36 @@
+name: 🚀 Deploy to Production
+on:
+  workflow_call:
+    inputs:
+      force:
+        required: false
+        type: boolean
+
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://www.nvhskincare.com
+    steps:
+      - name: Manual approval
+        if: ${{ !inputs.force }}
+        uses: trstringer/manual-approval@v1
+        with:
+          secret: ${{ secrets.GITHUB_TOKEN }}
+          approvers: 'nvh-admin-team'
+          minimum-approvals: 2
+      - uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROD_PROJECT_ID }}
+          scope: ${{ secrets.VERCEL_ORG_ID }}
+          production: true
+      - run: npm run health-check --url=https://www.nvhskincare.com
+      - uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_COLOR: '#00FF00'
+          SLACK_TITLE: 'NVH Production Deployment Complete'
+          SLACK_MESSAGE: 'Production deployment completed successfully.'

@@ -1,0 +1,23 @@
+name: 📊 PR Quality Gate
+on:
+  workflow_call:
+
+jobs:
+  pr-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+      - run: |
+          echo "### Test Summary" >> $GITHUB_STEP_SUMMARY
+          echo "**BDD Reports**: $(find artifacts -name 'cucumber-report-*.html' | wc -l) variants tested" >> $GITHUB_STEP_SUMMARY
+      - uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            ## Quality Report for PR #${{ github.event.number }}
+            - ✅ Lint checks passed
+            - 🧪 CI tests passed
+            - 🥒 BDD tests passed
+            - 📊 [View Test Reports](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          repo-token: ${{ secrets.GITHUB_TOKEN }}

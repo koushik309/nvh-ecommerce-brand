@@ -1,0 +1,27 @@
+name: 🛡️ Gatekeeper Checks
+on:
+  workflow_call:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: shiftleft/scan-action@master
+        with:
+          output: reports/
+          build:
+            language: javascript
+      - uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: |
+            https://staging.nvhskincare.com
+            https://staging.nvhskincare.com/products
+          uploadArtifacts: true
+      - uses: treosh/artillery-action@v1
+        with:
+          command: run
+          config: .artillery/load-test.yml
+      - uses: pa11y/pa11y-ci@main
+        with:
+          urls: https://staging.nvhskincare.com
+          config: .pa11yci.json

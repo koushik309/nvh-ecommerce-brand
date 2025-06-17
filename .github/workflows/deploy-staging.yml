@@ -1,0 +1,22 @@
+name: 🚀 Deploy to Staging
+on:
+  workflow_call:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/checkout@v4
+      - uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_STAGING_PROJECT_ID }}
+          scope: ${{ secrets.VERCEL_ORG_ID }}
+      - run: npm run smoke-test --url=${{ steps.vercel.outputs.preview-url }}
+      - uses: chrnorm/comment-deployment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: staging
+          url: ${{ steps.vercel.outputs.preview-url }}

@@ -1,0 +1,22 @@
+name: 🧪 CI Tests
+on:
+  workflow_call:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 20.x]
+        test-type: [unit, integration]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm test -- ${{ matrix.test-type }} --ci --coverage
+      - uses: actions/upload-artifact@v3
+        with:
+          name: coverage-${{ matrix.test-type }}-${{ matrix.node-version }}
+          path: coverage
