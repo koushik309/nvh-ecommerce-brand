@@ -19,7 +19,10 @@ jobs:
       - name: Determine event type
         id: check
         run: |
-          echo "is-pr=${{ github.event_name == 'pull_request' }}" >> $GITHUB_OUTPUT
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "is-pr=true" >> $GITHUB_OUTPUT
+          else
+            echo "is-pr=false" >> $GITHUB_OUTPUT
 
       - name: Set version
         id: version
@@ -30,3 +33,4 @@ jobs:
             echo "release-version=sha-${{ github.sha }}" >> $GITHUB_OUTPUT
           else
             echo "release-version=${{ inputs.release-version }}" >> $GITHUB_OUTPUT
+          fi
