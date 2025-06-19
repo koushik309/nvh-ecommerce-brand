@@ -1,4 +1,4 @@
-name: 🧭 Determine Version
+name: Determine Version
 on:
   workflow_call:
     outputs:

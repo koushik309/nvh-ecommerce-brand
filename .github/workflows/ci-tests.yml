@@ -1,4 +1,4 @@
-name: 🧪 CI Tests
+name: CI Tests
 on:
   workflow_call:
 
@@ -11,12 +11,12 @@ jobs:
         test-type: [unit, integration]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4s
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm test -- ${{ matrix.test-type }} --ci --coverage
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: coverage-${{ matrix.test-type }}-${{ matrix.node-version }}
           path: coverage

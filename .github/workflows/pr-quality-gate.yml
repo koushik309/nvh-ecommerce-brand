@@ -1,4 +1,4 @@
-name: 📊 PR Quality Gate
+name: PR Quality Gate
 on:
   workflow_call:
 
@@ -16,8 +16,8 @@ jobs:
         with:
           message: |
             ## Quality Report for PR #${{ github.event.number }}
-            - ✅ Lint checks passed
-            - 🧪 CI tests passed
-            - 🥒 BDD tests passed
-            - 📊 [View Test Reports](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            - Lint checks passed
+            - CI tests passed
+            - BDD tests passed
+            - [View Test Reports](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
           repo-token: ${{ secrets.GITHUB_TOKEN }}

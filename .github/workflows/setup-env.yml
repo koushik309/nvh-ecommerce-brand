@@ -1,4 +1,4 @@
-name: 🛠️ Setup Environment
+name: Setup Environment
 on:
   workflow_call:
     inputs:
