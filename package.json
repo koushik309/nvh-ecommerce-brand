@@ -9,7 +9,7 @@
     "lint": "next lint",
     "test": "jest",
     "type-check": "tsc --noEmit",
-    "test:ci": "jest --ci --coverage",
+    "test:ci": "jest --ci --coverage --testPathPatterns=integration",
     "test:unit": "npm run test:ci -- --testPathPattern=unit",
     "test:integration": "npm run test:ci -- --testPathPattern=integration"
   },
