@@ -12,7 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: docker compose -f docker-compose.test.yml up -d
+      # Optional: only if using docker-compose
+      # - run: docker compose -f docker-compose.test.yml up -d
 
       - uses: ruby/setup-ruby@v1
         with:
@@ -20,13 +21,14 @@ jobs:
 
       - run: gem install cucumber
 
+      - name: Create reports directory
+        run: mkdir -p reports
+
       - run: |
           cucumber BROWSER=${{ matrix.browser }} VIEWPORT=${{ matrix.viewport }} \
             --format json --out reports/cucumber.json
         env:
           APP_URL: http://localhost:3000
-      - name: Create reports directory
-        run: mkdir -p reports
 
       - name: Generate Cucumber Report
         uses: deblockt/cucumber-report-annotations-action@v1.7
