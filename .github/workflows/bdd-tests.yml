@@ -25,6 +25,8 @@ jobs:
             --format json --out reports/cucumber.json
         env:
           APP_URL: http://localhost:3000
+      - name: Create reports directory
+        run: mkdir -p reports
 
       - name: Generate Cucumber Report
         uses: deblockt/cucumber-report-annotations-action@v1.7
