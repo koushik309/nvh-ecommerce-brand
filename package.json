@@ -10,7 +10,7 @@
   "test": "jest",
   "type-check": "tsc --noEmit",
   "test:ci": "jest --ci --coverage",
-  "test:unit": "npm run test:ci -- --testPathPatterns=unit",
+  "test:unit": "npm run test:ci -- --testPathPatterns=tests/unit",
   "test:integration": "npm run test:ci -- --testPathPatterns=integration"
 },
   "dependencies": {
