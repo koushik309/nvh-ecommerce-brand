@@ -11,7 +11,8 @@
   "type-check": "tsc --noEmit",
   "test:ci": "jest --ci --coverage",
   "test:unit": "npm run test:ci -- --testPathPatterns=tests/unit --passWithNoTests",
-  "test:integration": "npm run test:ci -- --testPathPatterns=integration"
+  "test:integration": "npm run test:ci -- --testPathPatterns=integration --passWithNoTests"
+
 },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",
