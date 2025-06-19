@@ -2,17 +2,17 @@
   "name": "dashboard",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "jest",
-    "type-check": "tsc --noEmit",
-    "test:ci": "jest --ci --coverage --testPathPatterns=integration",
-    "test:unit": "npm run test:ci -- --testPathPattern=unit",
-    "test:integration": "npm run test:ci -- --testPathPattern=integration"
-  },
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "test": "jest",
+  "type-check": "tsc --noEmit",
+  "test:ci": "jest --ci --coverage",
+  "test:unit": "npm run test:ci -- --testPathPatterns=unit",
+  "test:integration": "npm run test:ci -- --testPathPatterns=integration"
+},
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-checkbox": "^1.1.4",
