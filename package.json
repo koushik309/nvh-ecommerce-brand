@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
+    "type-check": "tsc --noEmit",
     "test:ci": "jest --ci --coverage",
     "test:unit": "npm run test:ci -- --testPathPattern=unit",
     "test:integration": "npm run test:ci -- --testPathPattern=integration"
