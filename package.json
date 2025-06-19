@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "test": "jest",
+    "test:ci": "jest --ci --coverage",
+    "test:unit": "npm run test:ci -- --testPathPattern=unit",
+    "test:integration": "npm run test:ci -- --testPathPattern=integration"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",
